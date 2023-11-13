@@ -3,41 +3,38 @@ import MedIcon from "../img/medIcon.svg";
 import SearchIcon from "../img/SearchIcon.svg";
 import AutoComplete from "./AutoComplete";
 
-const SearchBar = ({ onSearch }) => {
-  const [inputValue, setInputValue] = useState("");
+const SearchBar = ({ onSearch, value }) => {
+  const [inputValue, setInputValue] = useState(value || ""); // Initialize with the value from props
   const [searchCompletionVisible, setSearchCompletionVisible] = useState(false);
+
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      onSearch(e.target.value);
+      onSearch(inputValue);
+      setSearchCompletionVisible(false);
     }
   };
+
   const handleInputClick = () => {
     setSearchCompletionVisible(true);
   };
+
   const handleItemSelect = (selectedItem) => {
-    // Handle the selected item here, for example, update the input value
     setInputValue(selectedItem);
-
-    // You can also perform other actions here if needed
-
-    // Close the dropdown
     setSearchCompletionVisible(false);
   };
+
   const showDropDownList = () => {
-    if (inputValue === "") {
-      setSearchCompletionVisible(false);
-    } else {
-      setSearchCompletionVisible(true);
-    }
+    setSearchCompletionVisible(inputValue !== "");
   };
 
   useEffect(() => {
     showDropDownList();
   }, [inputValue]);
+
   return (
     <div>
       <div className="search"></div>
-      <img className="MedIcon" src={MedIcon}></img>
+      <img className="MedIcon" src={MedIcon} alt="MedIcon"></img>
       <div className="line"></div>
       <input
         className="searchbar"
@@ -48,7 +45,7 @@ const SearchBar = ({ onSearch }) => {
         onKeyPress={handleKeyPress}
         onClick={handleInputClick}
       />
-      <img className="searchIcon" src={SearchIcon}></img>
+      <img className="searchIcon" src={SearchIcon} alt="SearchIcon"></img>
       {searchCompletionVisible && (
         <AutoComplete inputValue={inputValue} onItemSelect={handleItemSelect} />
       )}

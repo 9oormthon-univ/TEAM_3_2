@@ -8,7 +8,7 @@ const LoginPage = ({ onLogin }) => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    loginUser(username, onLogin, navigate);
+    navigate(`/?id=${username}`);
   };
 
   return (

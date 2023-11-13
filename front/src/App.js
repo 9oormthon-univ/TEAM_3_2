@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Main from "./components/Main";
 import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
+import SearchPage from "./components/SearchPage";
 import "./style/style.scss";
 
 const App = () => {
@@ -37,6 +38,12 @@ const App = () => {
         <Route
           path="/register"
           element={<RegisterPage onRegister={handleRegister} />}
+        />
+        <Route
+          path="/search"
+          element={
+            <SearchPage username={loginUsername} onLogout={handleLogout} />
+          }
         />
       </Routes>
     </Router>

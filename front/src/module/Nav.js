@@ -1,9 +1,12 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 const Nav = ({ username, onLogout }) => {
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
-  React.useEffect(() => {
-    setIsLoggedIn(!!username);
-  }, [username]);
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const idFromQuery = params.get("id");
+
+  const isLoggedIn = !!username || !!idFromQuery;
+
   return (
     <div className="nav">
       <div className="top-info"></div>
@@ -14,7 +17,9 @@ const Nav = ({ username, onLogout }) => {
         className="greetings"
         dangerouslySetInnerHTML={{
           __html: isLoggedIn
-            ? `${username} <div class='word2'> 님, 안녕하세요</div>`
+            ? `${
+                username || idFromQuery
+              } <div class='word2'> 님, 안녕하세요</div>`
             : "",
         }}
       ></div>
