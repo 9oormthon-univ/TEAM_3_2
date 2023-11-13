@@ -10,7 +10,7 @@
     position: absolute;
     width: 80px;
     height: 60px;
-    top: 50px;
+    top: 30px;
     left: 5%;
 }
 /* 구름 배경에 대한 스타일 */
@@ -209,7 +209,6 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
     text-align: left;
     outline: 0;
     z-index: 4;
-    color: #878787;
 }
 .CompletionContainer{
 /* Rectangle 51 */
@@ -661,6 +660,239 @@ border: 2px solid #000958;
     border: 0.5px solid #000000;
     transform: rotate(90deg);
 }
+
+/*검색페이지*/
+.AllergicAdd{
+    /* Rectangle 64 */
+
+position: absolute;
+width: 90px;
+height: 25px;
+left: calc(50% + 185px);
+top: 225px;
+
+/* snb color 2 */
+background: #000958;
+border-radius: 30px;
+
+}
+.AllergicAdd span{
+    /* 알러지 등록 */
+
+position: absolute;
+width: 56px;
+height: 23px;
+left: calc(50% - 15.5px);
+top: 0.5px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 11px;
+line-height: 14px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+.plus-circle{
+    /* plus-circle */
+position: absolute;
+width: 13px;
+height: 13px;
+left:calc(50% - 32.5px);
+top:5.5px;
+}
+.AllergeContainer{
+    /* Rectangle 51 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 550px;
+height: 200px;
+left: calc(50% - 275px);
+top: 270px;
+
+background: #FFFFFF;
+/* main color */
+border: 1px solid #AAB3FF;
+box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+border-radius: 16px;
+
+}
+.MedTitle{
+    /* 항 히스타민제 */
+
+position: absolute;
+width: 100px;
+height: 15px;
+left: calc(50% - 75px);
+top: 30px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+
+/* snb color 2 */
+color: #000958;
+
+
+}
+.MedIngredients{
+    /* Rectangle 82 */
+
+position: absolute;
+width: 54px;
+height: 15px;
+left: calc(50% - 75px);
+top: 55px;
+
+/* main color */
+background: #AAB3FF;
+border-radius: 30px;
+
+}
+.MedIngredients span{
+    /* 약의 성분 */
+
+position: absolute;
+width: 40.5px;
+height: 7.2px;
+left: calc(50% - 15px);
+top: 5px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 8px;
+line-height: 10px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+.MedIngredientsInfo{
+    /* 세포증식, 분화와 혈구 생성, 염증반응, 조직 재생과 신경전달 등에 관여하는 단백질 */
+
+position: absolute;
+width: 325px;
+height: 19px;
+left: calc(50% - 25px);
+top: 20px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight:500;
+font-size: 9.75px;
+line-height: 20px;
+/* or 143% */
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+}
+.MedEfficacy{
+    /* Rectangle 82 */
+
+position: absolute;
+width: 54px;
+height: 15px;
+left: calc(50% - 75px);
+top: 110px;
+
+
+/* main color */
+background: #AAB3FF;
+border-radius: 30px;
+
+}
+.MedEfficacy span{
+    /* 효능 및 효과 */
+
+position: absolute;
+width: 40.5px;
+height: 7.2px;
+left: calc(50% - 19px);
+top: 5px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 8px;
+line-height: 10px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+.MedEfficacyInfo{
+    /* 항히스타민제는 두드러기, 발적, 소양감 등의 알레르기성 반응에 관여하는 히스타민의 작용을 억제하는 약물이다. 알레르기성 질환 외에도 콧물, 재채기, 불면, 어지럼증, 구토 멀미 등을 완화하는데 사용된다. */
+
+position: absolute;
+width: 325px;
+height: 19px;
+left: calc(50% - 25px);
+top: 35px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 500;
+font-size: 9.75px;
+line-height: 15px;
+/* or 143% */
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+}
+.MedImageContainer{
+    /* Rectangle 81 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 150px;
+height: 150px;
+left: calc(50% - 250px);
+
+top: 23px;
+
+background: #FFFFFF;
+/* g 3 */
+border: 1px solid #DFDFDF;
+box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.2);
+border-radius: 16px;
+
+}
+.MedImageContainer img{
+    position: absolute;
+    width: 90%;
+    top: 25%;
+    margin-left: 5%;
+}
+
+
+
+
+
 
 
 

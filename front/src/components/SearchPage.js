@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../module/Logo";
 import SearchBar from "../module/Search";
+import MedInfo from "../module/MedInfo";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import Nav from "../module/Nav";
 const SearchPage = ({ username, onLogout }) => {
@@ -28,7 +29,8 @@ const SearchPage = ({ username, onLogout }) => {
       <Logo />
       <SearchBar onSearch={handleSearch} value={searchQuery} />
       <Nav username={username} onLogout={handleLogout} />
-    </div> //
+      <MedInfo value={searchQuery} />
+    </div>
   );
 };
 export default SearchPage;
