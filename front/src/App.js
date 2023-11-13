@@ -1,0 +1,46 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Main from "./components/Main";
+import LoginPage from "./components/LoginPage";
+import RegisterPage from "./components/RegisterPage";
+import "./style/style.scss";
+
+const App = () => {
+  const [loginUsername, setLoginUsername] = React.useState("");
+
+  // 로그인 처리 함수
+  const handleLogin = (username) => {
+    setLoginUsername(username);
+  };
+
+  // 로그아웃 처리 함수
+  const handleLogout = () => {
+    // 여기에 로그아웃 로직을 구현하세요
+    setLoginUsername(""); // 사용자 이름을 빈 문자열로 설정하여 로그아웃을 표현합니다.
+  };
+  const handleRegister = (username) => {
+    // 여기에 실제 회원가입 로직을 추가하세요
+    // 예시로 사용자 이름을 설정합니다
+    setLoginUsername(username);
+  };
+
+  return (
+    <Router>
+      <Routes>
+        {/* Main 컴포넌트에 onLogout 함수를 전달하여 로그아웃 처리를 가능하게 합니다. */}
+        <Route
+          path="/"
+          element={<Main username={loginUsername} onLogout={handleLogout} />}
+        />
+        {/* LoginPage 컴포넌트에 onLogin 함수를 전달하여 로그인 처리를 가능하게 합니다. */}
+        <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
+        <Route
+          path="/register"
+          element={<RegisterPage onRegister={handleRegister} />}
+        />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;

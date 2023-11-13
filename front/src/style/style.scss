@@ -1,0 +1,333 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+/* 메인 컨테이너에 대한 스타일 */
+.main {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+/* 로고에 대한 스타일 */
+.Logo {
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    top: 50px;
+    left: 5%;
+}
+/* 구름 배경에 대한 스타일 */
+.background {
+    position: absolute;
+    top: 28%;
+    width: 100vw;
+    height: 650px; /* Adjust based on your actual image height */
+    background-image: url("../img/bg.svg");
+    background-size: contain; /* or background-size: contain; */
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+.text1{
+/* 내가 먹는 약, 안전할까? */
+
+position: absolute;
+width: 510px;
+height: 66px;
+left: 360px;
+top: 170px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 66px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+
+}
+.text2{
+    /* 한 눈에 보는 약 정보 */
+position: absolute;
+width: 440px;
+height: 66px;
+left: 360px;
+top: 230px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 66px;
+/* identical to box height */
+display: flex;
+align-items: center;
+color: #FFFFFF;
+}
+.Allergenie_Text{
+    /* Allergenie */
+
+position: absolute;
+width: 384px;
+height: 95px;
+left: 360px;
+top: 370px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 65px;
+line-height: 95px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+
+}
+.text-info{
+
+position: absolute;
+width: 580px;
+height: 85px;
+left: 360px;
+top: 460px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 8px;
+line-height: 12px;
+display: flex;
+align-items: center;
+letter-spacing: -0.05em;
+
+/* g 3 */
+color: #DFDFDF;
+
+
+}
+.goorm1 {
+    position: absolute;
+    width: 310px; /* 원하는 너비로 조정 */
+    height: 210px; /* 높이를 자동으로 조정하여 비율 유지 */
+    left: -25px;
+    top: 255px;
+    background: url("../img/goorm1.svg") center center no-repeat;
+    background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+    filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));;
+    transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+}
+.goormbig {
+    /* 구름캐릭터_대지 1_대지 1 1 */
+    position: absolute;
+    width: 400px;
+    height: 256px;
+    left: 63.5%;
+    top: 190px;
+    
+    /* Set background image and size */
+    background: url("../img/goormbig.svg") center center / cover,
+                url("../img/goormbig.svg") center center / cover,
+                url("../img/goormbig.svg") center center / cover;
+    
+    filter: drop-shadow(4px 4px 20px rgba(0, 9, 88, 0.2));
+}
+.goormsmallneighbor{
+    /* 구룸 일러스트_대지 1 1 */
+
+position: absolute;
+width: 180px;
+height: 117px;
+left: 80.5%;
+top: 325px;
+
+background: url("../img/goormsmallneighbor.svg");
+filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
+background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+
+}
+.goormsmall{
+    /* 구룸 일러스트_대지 1 3 */
+position: absolute;
+width: 150px;
+height: 97px;
+left: 280px;
+top: 30px;
+background: url("../img/goormsmall.svg");
+filter: drop-shadow(0px 0px 20px rgba(0, 9, 88, 0.2));
+background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+
+}
+.goormsmallmid{
+    /* 구룸 일러스트_대지 1 2 */
+
+position: absolute;
+width: 214px;
+height: 139px;
+left: 850px;
+top: 490px;
+
+background: url("../img/goormmiddlesmall.svg");
+filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
+background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+
+}
+
+/* 검색 컨테이너에 대한 스타일 */
+.search {
+    box-sizing: border-box;
+    position: absolute;
+    width: 550px;
+    height: 40px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    border: 1px solid #AAB3FF;
+    box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+    border-radius: 10px;
+}
+
+/* 검색 바 입력에 대한 스타일 */
+.searchbar {
+    position: absolute;
+    left: calc(62% - 800px/2);
+    top: 17.5%;
+    width: 490px;
+    height: 40px;
+    border-radius: 16px;
+    border: none;
+    background: transparent;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    outline: 0;
+}
+
+/* 의료 아이콘에 대한 스타일 */
+.MedIcon {
+    position: absolute;
+    width: 29px;
+    top: 18%;
+    left: calc(59% - 800px/2);
+}
+
+/* 검색바  선에 대한 스타일 */
+.line {
+    position: absolute;
+    width: 27px;
+    height: -30px;
+    left: calc(60.5% - 800px/2);
+    top: 20%;
+    border: 0.5px solid #AAB3FF;
+    transform: rotate(90deg);
+}
+
+/* 검색 아이콘에 대한 스타일 */
+.searchIcon {
+    position: absolute;
+    top: 18.5%;
+    right: 33%;
+    width: 22.5px;
+}
+
+
+.medGuide{
+    /* 지니가 알려주는 올바른 약 복용법 */
+
+position: absolute;
+width: 312px;
+height: 29px;
+left: 840px;
+top: 930px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 20px;
+line-height: 29px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: right;
+
+/* snb color 2 */
+color: #000958;
+
+
+}
+.medGuideBox1{
+    /* Group 439 */
+
+position: absolute;
+width: 680px;
+height: 200px;
+left: calc(50% - 680px/2 + 10px);
+top: 1020px;
+
+background: #D9D9D9;
+border-radius: 16px;
+
+}
+.goormGuide{
+    /* 구름2_대지 1 1 */
+
+position: absolute;
+width: 283px;
+height: 190px;
+left: 300px;
+top: 930px;
+
+background: url("../img/goormguide.svg");
+filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
+background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+
+}
+.medGuideBox2{
+/* Group 441 */
+
+position: absolute;
+width: 325px;
+height: 150px;
+left: calc(50% - 250px/2 - 200px);
+top: 1250px;
+
+background: #D9D9D9;
+border-radius: 16px;
+
+
+}
+.medGuideBox3{
+/* Group 440 */
+
+position: absolute;
+width: 325px;
+height: 150px;
+left: calc(50% - 400px/2 + 220px);
+top: 1250px;
+
+background: #D9D9D9;
+border-radius: 16px;
+}
+.goormGuideFooter{
+    /* 구룸 일러스트_대지 1 5 */
+
+position: absolute;
+width: 132px;
+height: 86px;
+left: 1024px;
+top: 1370px;
+
+background: url("../img/goormguidefooter.svg");
+filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
+background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+
+}
+
