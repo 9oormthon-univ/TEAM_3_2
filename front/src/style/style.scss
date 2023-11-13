@@ -188,12 +188,13 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
     border: 1px solid #AAB3FF;
     box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
     border-radius: 10px;
+    z-index: 4;
 }
 
 /* 검색 바 입력에 대한 스타일 */
 .searchbar {
     position: absolute;
-    left: calc(62% - 800px/2);
+    left: calc(50% - 215px);
     top: 17.5%;
     width: 490px;
     height: 40px;
@@ -207,6 +208,61 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
     letter-spacing: 0em;
     text-align: left;
     outline: 0;
+    z-index: 4;
+    color: #878787;
+}
+.CompletionContainer{
+/* Rectangle 51 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 550px;
+height: 198px;
+left: 50%;
+transform: translate(-50%, -50%);
+top: 250px;
+
+background: #FFFFFF;
+/* main color */
+border: 1px solid #AAB3FF;
+box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+border-radius: 16px;
+z-index: 3;
+
+}
+.autocomplete-list {
+    /* 항 히스타민제 */
+    position: relative;
+    width: 100%;
+    height: 18px;
+    top: 20px;
+    left: -35px;
+    margin-left: calc(50% - 240px);
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 37px;
+    align-items: center;
+    list-style: none;
+
+    /* g 2 */
+    color: #878787;
+    
+    /* Allow content to overflow */
+    overflow: visible;
+}
+.auto-lists{
+    position: absolute;
+    text-indent: 50px;
+    width: 100%;
+    height:100%;
+}
+
+.auto-lists :hover {
+    background: #CBCBCB;
+    color: #FFFFFF;
 }
 
 /* 의료 아이콘에 대한 스타일 */
@@ -214,7 +270,8 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
     position: absolute;
     width: 29px;
     top: 18%;
-    left: calc(59% - 800px/2);
+    left: calc(50% - 265px);
+    z-index: 4;
 }
 
 /* 검색바  선에 대한 스타일 */
@@ -222,18 +279,20 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
     position: absolute;
     width: 27px;
     height: -30px;
-    left: calc(60.5% - 800px/2);
+    left: calc(50% - 240px);
     top: 20%;
     border: 0.5px solid #AAB3FF;
     transform: rotate(90deg);
+    z-index: 4;
 }
 
 /* 검색 아이콘에 대한 스타일 */
 .searchIcon {
     position: absolute;
     top: 18.5%;
-    right: 33%;
+    right: calc(50% - 257.5px);
     width: 22.5px;
+    z-index: 4;
 }
 
 
@@ -330,4 +389,291 @@ background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
 transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 
 }
+.MedKnowledge{
+    /* 구름 상식 */
+
+position: absolute;
+width: 89px;
+height: 29px;
+left: 430px;
+top: 1450px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 20px;
+line-height: 29px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+/* snb color 2 */
+color: #000958;
+
+
+}
+.KnowledgeBox1{
+    /* Group 442 */
+
+position: absolute;
+width: 160px;
+height: 200px;
+left: calc(50% - 194px/2 - 235px);
+top: 1530px;
+background: #D9D9D9;
+border-radius: 16px;
+
+}
+.KnowledgeBox2{
+    /* Group 445 */
+
+position: absolute;
+width: 160px;
+height: 200px;
+left: calc(50% - 194.63px/2 - 60px);
+top: 1530px;
+background: #D9D9D9;
+border-radius: 16px;
+
+}
+.KnowledgeBox3{
+    /* Group 444 */
+
+position: absolute;
+width: 160px;
+height: 200px;
+left: calc(50% - 194.63px/2 + 115px);
+top: 1530px;
+
+background: #D9D9D9;
+border-radius: 16px;
+
+}
+.KnowledgeBox4{
+    /* Group 446 */
+
+position: absolute;
+width: 160px;
+height: 200px;
+left: calc(50% - 194.63px/2 + 290px);
+top: 1530px;
+background: #D9D9D9;
+border-radius: 16px;
+
+}
+.KnowledgeGoorm{
+    /* 구룸 일러스트_대지 1 6 */
+
+position: absolute;
+width: 165px;
+height: 120px;
+left: calc(50% - 425px); 
+top: 1730px;
+
+background: url("../img/KnowledgeGoorm.svg");
+filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
+background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+}
+.Footer{
+
+position: absolute;
+width: 100vw;
+height: 80px;
+top: 1875px;
+
+/* sub color 1 */
+background: #DBE3FF;
+box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+
+}
+.Footer_Text{
+    /* 이용약관 | 개인정보처리방침 | 책임의 한계와 법적고지 | 회원정보 고객센터AllerGenie Copyright @ ALLERGENIE Corp. All Rights Reserved */
+
+position: absolute;
+width: 100vw;
+height: 54px;
+display: flex;
+justify-content: center;
+bottom: 10px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* snb color 2 */
+color: #000958;
+
+}
+.top-info{
+    /* 상단 정보 */
+    position: absolute;
+    width: 333px;
+    height: 45px;
+    right: calc(50% - 650px);
+    top: 40px;
+}
+
+
+.Profile_picture{
+    /* 프로필 사진 */
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    right: calc(50% - 360px);
+    top: 40px;
+}
+.Profile_Avatar{
+    /* 구름캐릭터_대지 1_대지 1 2 */
+
+position: absolute;
+width: 85px;
+height: 85px;
+right: calc(50% - 385px);
+top: 32.5px;
+
+background: url("../img/goormAvatar.svg");
+filter: drop-shadow(4px 4px 20px rgba(0, 9, 88, 0.2));
+background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+
+}
+.Ellipse{
+    /* Ellipse 35 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 45px;
+height: 45px;
+right: calc(50% - 360px);
+top: 40px;
+border-radius: 50%;
+
+background: linear-gradient(180deg, #DFDFDF 0%, rgba(217, 217, 217, 0) 100%);
+/* snb color 2 */
+border: 2px solid #000958;
+
+}
+.greetings {
+    position: absolute;
+    width: 150px;
+    height: 19px;
+    right: calc(50% - 515px);
+    top: 52px;
+  
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  
+    /* Added styles for ellipsis and preventing text wrapping */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .word2 {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 10px;
+  }
+
+.my-page{
+    /* 마이페이지 */
+
+    position: absolute;
+    width: 61px;
+    height: 17px;
+    right: calc(50% - 560px);
+    top: 54px;
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.logout{
+
+    /* 로그아웃 */
+
+    position: absolute;
+    width: 49px;
+    height: 17px;
+    right: calc(50% - 630px);
+    top: 54px;
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.line-16{
+    /* Line 16 */
+
+    position: absolute;
+    width: 20px;
+    height: 0px;
+    right: calc(50% - 500px);
+    top: 62.5px;
+
+    border: 0.5px solid #000000;
+    transform: rotate(90deg);
+}
+
+.line-17{
+    /* Line 17 */
+
+    position: absolute;
+    width: 20px;
+    height: 0px;
+    right: calc(50% - 580px);
+    top: 62.5px;
+
+    border: 0.5px solid #000000;
+    transform: rotate(90deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
