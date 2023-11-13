@@ -28,7 +28,7 @@ const SearchPage = ({ username, onLogout }) => {
       <Logo />
       <SearchBar onSearch={handleSearch} value={searchQuery} />
       <Nav username={username} onLogout={handleLogout} />
-    </div>
+    </div> //
   );
 };
 export default SearchPage;
