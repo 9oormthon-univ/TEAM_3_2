@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import handleRegister from "../service/\bRegisterService";
+import handleRegister from "../service/RegisterService";
 
 const RegisterPage = ({ onRegister }) => {
   const [username, setUsername] = useState(""); // 아이디 상태
