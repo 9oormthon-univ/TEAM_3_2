@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginUser } from "../module/auth"; // 경로는 필요에 맞게 조정하세요
+import handleLogin from "../service/LoginService";
 
 const LoginPage = ({ onLogin }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const [username, setUsername] = useState(""); // 아이디 상태
+  const [password, setPassword] = useState(""); // 비밀번호 상태
+  const navigate = useNavigate(); // react-router-dom의 useNavigate 훅
 
-  const handleLogin = () => {
-    navigate(`/?id=${username}`);
+  const handleLoginClick = () => {
+    handleLogin(username, password, onLogin, navigate);
   };
 
   return (
@@ -16,14 +16,16 @@ const LoginPage = ({ onLogin }) => {
       <input
         type="text"
         placeholder="아이디"
+        value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
         type="password"
         placeholder="비밀번호"
+        value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleLogin}>로그인</button>
+      <button onClick={handleLoginClick}>로그인</button>
     </div>
   );
 };

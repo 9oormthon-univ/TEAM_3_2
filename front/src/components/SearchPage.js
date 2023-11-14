@@ -4,6 +4,7 @@ import SearchBar from "../module/Search";
 import MedInfo from "../module/MedInfo";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import Nav from "../module/Nav";
+import RelationMed from "../module/RelationMed";
 const SearchPage = ({ username, onLogout }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -30,6 +31,7 @@ const SearchPage = ({ username, onLogout }) => {
       <SearchBar onSearch={handleSearch} value={searchQuery} />
       <Nav username={username} onLogout={handleLogout} />
       <MedInfo value={searchQuery} />
+      <RelationMed />
     </div>
   );
 };
