@@ -1,6 +1,6 @@
 # TEAM_3_2
 
-🍁 단풍톤 3팀의 프론트 레포지터리 입니다.
+🍁 단풍톤 3팀의 프론트 레포지터리 입니다. AllerGenie repo TEAM_3_2 for F-E
 
 # REACT
 
