@@ -24,7 +24,7 @@ const handleRegister = async (
     navigate("/login");
   } catch (error) {
     // 등록 실패 처리: 에러 메시지 표시 등
-    console.error("등록 실패!", error);
+    console.error("등록 실패", error);
   }
 };
 export default handleRegister;
