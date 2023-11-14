@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Main from "./components/Main";
 import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
 import SearchPage from "./components/SearchPage";
+import handleSearch from "./service/SearchService";
 import "./style/style.scss";
 
 const App = () => {
   const [loginUsername, setLoginUsername] = React.useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const handleSearchCallback = async (query, userId) => {
+    // Similar to your existing search logic
+    try {
+      const results = await handleSearch(query, userId);
+      setSearchResults(results);
+    } catch (error) {
+      console.error("검색 중 오류 발생:", error.message);
+    }
+  };
 
   // 로그인 처리 함수
   const handleLogin = (username) => {
@@ -31,7 +42,14 @@ const App = () => {
         {/* Main 컴포넌트에 onLogout 함수를 전달하여 로그아웃 처리를 가능하게 합니다. */}
         <Route
           path="/"
-          element={<Main username={loginUsername} onLogout={handleLogout} />}
+          element={
+            <Main
+              onSearch={handleSearchCallback}
+              searchResults={searchResults}
+              username={loginUsername}
+              onLogout={handleLogout}
+            />
+          }
         />
         {/* LoginPage 컴포넌트에 onLogin 함수를 전달하여 로그인 처리를 가능하게 합니다. */}
         <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
@@ -42,7 +60,12 @@ const App = () => {
         <Route
           path="/search"
           element={
-            <SearchPage username={loginUsername} onLogout={handleLogout} />
+            <SearchPage
+              onSearch={handleSearchCallback}
+              username={loginUsername}
+              searchResults={searchResults}
+              onLogout={handleLogout}
+            />
           }
         />
       </Routes>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import Search from "../module/Search";
 import Logo from "../module/Logo";
@@ -7,20 +7,23 @@ import Background from "../module/Background";
 import MedGuideBox from "../module/MedGuideBox";
 import MedKnowledgeBox from "../module/MedKnowledgeBox";
 import Footer from "../module/Footer";
+import handleSearch from "../service/SearchService";
 
-const Main = ({ username, onLogout }) => {
+const Main = ({ username, onLogout, onSearch, searchResults }) => {
   const [searchQuery, setSearchQuery] = React.useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
 
-  const handleSearch = (query) => {
+  const handleSearchCallback = async (query) => {
     setSearchQuery(query);
     console.log(`검색어: ${query}`);
-    const idFromQuery = params.get("id"); // Assuming you have idFromQuery available
-    const userId = username || idFromQuery;
+    const idFromQuery = params.get("id");
+    const userId = idFromQuery;
 
-    // Use navigate to go to the search page with both id and query parameters
+    // Call the common onSearch callback
+    onSearch(query, userId);
+
     navigate(`/search?id=${userId}&query=${query}`);
   };
 
@@ -35,7 +38,7 @@ const Main = ({ username, onLogout }) => {
     <div className="main">
       <Logo />
       <Nav username={username} onLogout={handleLogout} />
-      <Search onSearch={handleSearch} value={searchQuery} />
+      <Search onSearch={handleSearchCallback} value={searchQuery} />
       <Background />
       <MedGuideBox />
       <MedKnowledgeBox />
