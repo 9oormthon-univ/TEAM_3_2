@@ -980,8 +980,19 @@ color: #FFFFFF;
 
 }
 
-.LoginPage-nav {
-    /* /login navigation */
+.LoginPage-goorm1{ /* login 큰 구름 */
+position: absolute;
+top: 10%;
+left: calc(50% + 150px);
+}
+
+.LoginPage-goorm2{ /* login 작은 구름 */
+position: absolute;
+top: calc(10% + 550px);
+right: calc(50% + 250px);
+}
+
+.LoginPage-nav { /* login 내비게이션 */
 position: absolute;
 top: 42px;
 right: 70px;
@@ -996,7 +1007,7 @@ color: #878787;
 font-weight: 800;
 }
 
-.LoginPage-main {
+.LoginPage-main { 
 flex-direction: column;
 margin-top:212px;
 display: flex;
@@ -1004,7 +1015,7 @@ justify-content: center;
 align-items: center;
 }
 
-.loginBox{
+.loginBox{ /* login 박스 */
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -1018,21 +1029,21 @@ box-shadow: 0px 0px 25px 7px rgba(170, 179, 255, 0.30);
 font-family: 'Pretendard';
 }
 
-.loginBox-title{
+.loginBox-title{ /* 로그인 */
 margin-bottom: 46px;
 color:  #000958;
 font-size: 28px;
 font-weight: 700;
 }
 
-.loginBox-contents{
+.loginBox-contents{ /* 아이디, 비밀번호 */
 margin-bottom: 8px;
 color: #000958;
 font-size: 16px;
 font-weight: 600;
 }
 
-.login-tf{
+.login-tf{ /* login id input */
 display: flex;
 justify-items: center;
 width: 460px;
@@ -1041,13 +1052,13 @@ border-radius: 16px;
 border: 1px solid #AAB3FF;
 box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
 }
-.login-tf img{
+.login-tf img{ 
 width: 19px;
 height: 19px;
 padding: 20px 10px 20px 20px;
 }
 
-.login-tf input{
+.login-tf input{ /* id, pw 입력부분 */
 width: 355px;
 border: none;
 outline: none;
@@ -1062,7 +1073,7 @@ margin-top: 9px;
 display: flex;
 }
 
-.checkBox {
+.checkBox { /* 로그인 상태 체크박스 */
 appearance: none;
 width: 20px;
 height: 20px;
@@ -1072,12 +1083,11 @@ outline: none;
 cursor: pointer;
 background: url("../img/isCheckedFalse.svg") no-repeat center center;
 }
-
 .checkBox:checked {
 background: url("../img/isCheckedTrue.svg") no-repeat center center;
 }
 
-.checkText{
+.checkText{ /* 로그인 상태 유지 */
 margin-top: 7px;
 color:  #000958;
 font-family: 'Pretendard';
@@ -1085,7 +1095,8 @@ font-size: 10px;
 font-weight: 600;
 line-height: normal;
 }
-.loginBtn{
+
+.loginBtn{ 
 margin-top: 62px;
 width: 200px;
 height: 50px;
@@ -1098,11 +1109,10 @@ text-align: center;
 font-family: 'Pretendard';
 font-size: 16px;
 font-weight: 700;
-
 cursor: pointer;
 }
 
-.goRegister{
+.goRegister{ /* 회원가입하러 가기 */
 padding: 28px 0; 
 color: #000;
 font-family: 'Pretendard';
@@ -1111,11 +1121,89 @@ font-weight: 700;
 }
 
 
+.register-main{
+flex-direction: column;
+margin-top: 145px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
 
+.register-svg{
+height: 925px;
+}
 
+.register-box{
+position: absolute;
+top: 274px;
+width: 700px;
+height: 680px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
 
+.register-title{
+color:  #000958;
+font-size: 28px;
+font-weight: 700;
+}
 
+.register-tf{ 
+margin-bottom: 34px;
+display: flex;
+justify-items: center;
+width: 460px;
+height: 58px;
+border-radius: 16px;
+border: 1px solid #AAB3FF;
+box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
+}
 
+.register-tf input{
+margin-left: 10px;
+width: 355px;
+border: none;
+outline: none;
+color: #000958;
+font-family: 'Pretendard';
+font-size: 16px;
+font-weight: 500;
+}
+
+.registerBtn{ 
+margin-top: 30px;
+width: 200px;
+height: 50px;
+border-radius: 16px;
+background:#000958;
+box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
+
+color: #FFF;
+text-align: center;
+font-family: 'Pretendard';
+font-size: 16px;
+font-weight: 700;
+cursor: pointer;
+}
+
+.welcome{
+padding: 5px 0 25px;
+color: #AAB3FF;
+text-align: center;
+font-family: 'Inter';
+font-size: 14px;
+font-weight: 600;
+}
+
+.goLogin{ /* 로그인하러 가기 */
+margin-top: -37px;
+color: #000;
+font-family: 'Pretendard';
+font-size: 16px;
+font-weight: 700;
+}
 
 
 
