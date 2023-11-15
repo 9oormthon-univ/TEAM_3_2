@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import handleLogin from "../service/LoginService";
 import Logo from "../module/Logo";
+import Footer from "../module/Footer";
 import ID_Icon from "../img/id-icon.svg";
 import PW_Icon from "../img/pw-icon.svg";
-import Footer from "../module/Footer";
-
+import {ReactComponent as GoormBig} from "../img/goorm-login.svg";
+import {ReactComponent as GoormSmall} from "../img/goorm-login-small.svg";
 
 const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState(""); // 아이디 상태
@@ -32,6 +33,8 @@ const LoginPage = ({ onLogin }) => {
         <span>로그인</span> | 회원가입
       </nav>
       <main className="LoginPage-main">
+        <GoormBig className="LoginPage-goorm1" />
+        <GoormSmall className="LoginPage-goorm2" />
         <article className="loginBox">
           <div className="loginBox-title">
             로그인
@@ -84,7 +87,7 @@ const LoginPage = ({ onLogin }) => {
           </span>
         </article>
       </main>
-      <Footer footerTop={"calc(100vh - 80px)"}/>
+      <Footer footerTop={"904px"}/>
     </div>
   );
 };
