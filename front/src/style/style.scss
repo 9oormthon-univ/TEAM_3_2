@@ -479,7 +479,6 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 position: absolute;
 width: 100vw;
 height: 80px;
-top: 1875px;
 
 /* sub color 1 */
 background: #DBE3FF;
@@ -981,10 +980,135 @@ color: #FFFFFF;
 
 }
 
+.LoginPage-nav {
+    /* /login navigation */
+position: absolute;
+top: 42px;
+right: 70px;
+    
+font-family: 'Pretendard';
+font-size: 14px;
+font-weight: 600;
+word-spacing: 10px;
+}
+.LoginPage-nav span {
+color: #878787;
+font-weight: 800;
+}
 
+.LoginPage-main {
+flex-direction: column;
+margin-top:212px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
 
+.loginBox{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 
+width: 700px;
+height: 530px;
+border-radius: 16px;
+border: 1px solid #AAB3FF;
+box-shadow: 0px 0px 25px 7px rgba(170, 179, 255, 0.30);
+font-family: 'Pretendard';
+}
 
+.loginBox-title{
+margin-bottom: 46px;
+color:  #000958;
+font-size: 28px;
+font-weight: 700;
+}
+
+.loginBox-contents{
+margin-bottom: 8px;
+color: #000958;
+font-size: 16px;
+font-weight: 600;
+}
+
+.login-tf{
+display: flex;
+justify-items: center;
+width: 460px;
+height: 58px;
+border-radius: 16px;
+border: 1px solid #AAB3FF;
+box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
+}
+.login-tf img{
+width: 19px;
+height: 19px;
+padding: 20px 10px 20px 20px;
+}
+
+.login-tf input{
+width: 355px;
+border: none;
+outline: none;
+color: #000958;
+font-family: 'Pretendard';
+font-size: 16px;
+font-weight: 500;
+}
+
+.check{
+margin-top: 9px;
+display: flex;
+}
+
+.checkBox {
+appearance: none;
+width: 20px;
+height: 20px;
+border: none;
+border-radius: 50%;
+outline: none;
+cursor: pointer;
+background: url("../img/isCheckedFalse.svg") no-repeat center center;
+}
+
+.checkBox:checked {
+background: url("../img/isCheckedTrue.svg") no-repeat center center;
+}
+
+.checkText{
+margin-top: 7px;
+color:  #000958;
+font-family: 'Pretendard';
+font-size: 10px;
+font-weight: 600;
+line-height: normal;
+}
+.loginBtn{
+margin-top: 62px;
+width: 200px;
+height: 50px;
+border-radius: 16px;
+background:#000958;
+box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
+
+color: #FFF;
+text-align: center;
+font-family: 'Pretendard';
+font-size: 16px;
+font-weight: 700;
+
+cursor: pointer;
+}
+
+.goRegister{
+padding: 28px 0; 
+color: #000;
+font-family: 'Pretendard';
+font-size: 16px;
+font-weight: 700;
+}
 
 
 
