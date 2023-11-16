@@ -3,7 +3,7 @@ import Logo from "../module/Logo";
 import Nav from "../module/Nav";
 import MyProfile from "../module/MyProfile";
 
-const MyPage = ({ username, handleLogout, medicine }) => {
+const MyPage = ({ username, handleLogout }) => {
   return (
     <div>
       <Logo />
@@ -36,14 +36,14 @@ const MyPage = ({ username, handleLogout, medicine }) => {
           </div>
           <div className="Mypage-caution-container">
             <div className="Mypage-caution-img">
-              <img src={medicine.image} />
+              {/* <img src={medicine.image} /> */}
             </div>
             <div className="Mypage-caution-content">
               <div className="Mypage-caution-name">
-                {medicine.name}
+                {/* {medicine.name} */}
               </div>
               <div className="Mypage-caution-about">
-                {medicine.caution}
+                {/* {medicine.caution} */}
               </div>
             </div>
           </div>
