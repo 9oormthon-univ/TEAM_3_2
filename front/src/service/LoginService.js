@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const handleLogin = async (username, password, onLogin, navigate) => {
+const handleLogin = async (email, password, onLogin, navigate) => {
   try {
     const response = await axios.post("http://localhost:8000/login", {
-      아이디: username,
+      아이디: email,
       비밀번호: password,
     });
     console.log("서버 응답 전문:", response);
