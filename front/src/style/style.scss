@@ -13,16 +13,25 @@
     top: 30px;
     left: 5%;
 }
+.MedGuideContainer{
+    position: absolute;
+    margin-top: 60vw;
+    width:100%;
+    height: 100vh*0.5;
+
+}
 /* 구름 배경에 대한 스타일 */
 .background {
     position: absolute;
-    top: 28%;
+    margin-top: 30vh;
     width: 100vw;
-    height: 650px; /* Adjust based on your actual image height */
+    height: 100vw*0.33; /* Adjust based on your actual image height */
+    min-height: 30vh;
     background-image: url("../img/bg.svg");
-    background-size: contain; /* or background-size: contain; */
+    background-size:cover; /* or background-size: contain; */
     background-repeat: no-repeat;
     background-position: center;
+
   }
 .text1{
 /* 내가 먹는 약, 안전할까? */
@@ -30,12 +39,12 @@
 position: absolute;
 width: 510px;
 height: 66px;
-left: 360px;
-top: 170px;
 font-family: 'Pretendard';
+margin-top: 7vw;
+margin-left: 23.5vw;
 font-style: normal;
 font-weight: 700;
-font-size: 40px;
+font-size: 2.5vw;
 line-height: 66px;
 /* identical to box height */
 display: flex;
@@ -50,12 +59,12 @@ color: #FFFFFF;
 position: absolute;
 width: 440px;
 height: 66px;
-left: 360px;
-top: 230px;
+margin-left: 23.5vw;
+margin-top: 11vw;
 font-family: 'Pretendard';
 font-style: normal;
 font-weight: 700;
-font-size: 40px;
+font-size: 2.5vw;
 line-height: 66px;
 /* identical to box height */
 display: flex;
@@ -65,36 +74,40 @@ color: #FFFFFF;
 .Allergenie_Text{
     /* Allergenie */
 
-position: absolute;
-width: 384px;
-height: 95px;
-left: 360px;
-top: 370px;
-
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 700;
-font-size: 65px;
-line-height: 95px;
-display: flex;
-align-items: center;
-
-color: #FFFFFF;
+    position: absolute;
+    width: 440px;
+    height: 66px;
+    margin-left: 23.5vw;
+    margin-top: 20vw;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4vw;
+    line-height: 66px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
 
 
 }
 .text-info{
 
 position: absolute;
-width: 580px;
-height: 85px;
-left: 360px;
-top: 460px;
+// width: 580px;
+// height: 85px;
+// left: 360px;
+// top: 460px;
+position: absolute;
+    width: 440px;
+    height: 66px;
+    margin-left: 23.5vw;
+    margin-top: 26vw;
 
 font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
-font-size: 8px;
+font-size: 0.2vw*3;
 line-height: 12px;
 display: flex;
 align-items: center;
@@ -107,10 +120,10 @@ color: #DFDFDF;
 }
 .goorm1 {
     position: absolute;
-    width: 310px; /* 원하는 너비로 조정 */
-    height: 210px; /* 높이를 자동으로 조정하여 비율 유지 */
-    left: -25px;
-    top: 255px;
+    width: 21vw; /* 원하는 너비로 조정 */
+    height: 210px;
+    margin-left: -2vw;
+    margin-top: 12vw;
     background: url("../img/goorm1.svg") center center no-repeat;
     background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
     filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));;
@@ -119,43 +132,46 @@ color: #DFDFDF;
 .goormbig {
     /* 구름캐릭터_대지 1_대지 1 1 */
     position: absolute;
-    width: 400px;
-    height: 256px;
-    left: 63.5%;
-    top: 190px;
-    
-    /* Set background image and size */
-    background: url("../img/goormbig.svg") center center / cover,
-                url("../img/goormbig.svg") center center / cover,
-                url("../img/goormbig.svg") center center / cover;
+    width: 30vw;
+    height: 20vw;
+    margin-left: 63.5vw;
+    margin-top: 40vh*0.6/2;
+    background: url("../img/goormbig.svg") center center / contain,
+                url("../img/goormbig.svg") center center / contain,
+                url("../img/goormbig.svg") center center / contain;
     
     filter: drop-shadow(4px 4px 20px rgba(0, 9, 88, 0.2));
+    background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+    background-repeat: no-repeat;
+    transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 }
 .goormsmallneighbor{
     /* 구룸 일러스트_대지 1 1 */
 
 position: absolute;
-width: 180px;
-height: 117px;
-left: 80.5%;
-top: 325px;
+width: 10vw;
+height: 15vh;
+margin-left: 80.5vw;
+margin-top:20vw;
 
 background: url("../img/goormsmallneighbor.svg");
 filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
 background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+background-repeat: no-repeat;
 transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 
 }
 .goormsmall{
     /* 구룸 일러스트_대지 1 3 */
 position: absolute;
-width: 150px;
-height: 97px;
-left: 280px;
-top: 30px;
+width: 10vw;
+height:15vh;
+margin-left: 20vw;
+margin-top: -2.5*2vh;
 background: url("../img/goormsmall.svg");
 filter: drop-shadow(0px 0px 20px rgba(0, 9, 88, 0.2));
 background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+background-repeat: no-repeat;
 transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 
 }
@@ -163,12 +179,13 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
     /* 구룸 일러스트_대지 1 2 */
 
 position: absolute;
-width: 214px;
-height: 139px;
-left: 850px;
-top: 490px;
+width: 12.5vw;
+height: 17vw;
+margin-left: 55vw;
+margin-top: 30vw;
 
 background: url("../img/goormmiddlesmall.svg");
+background-repeat: no-repeat;
 filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
 background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
 transform-origin: center center; /* 회전 중심을 가운데로 조정 */
@@ -181,6 +198,7 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
     position: absolute;
     width: 550px;
     height: 40px;
+    max-width: 90vw;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -301,8 +319,8 @@ z-index: 3;
 position: absolute;
 width: 312px;
 height: 29px;
-left: 840px;
-top: 930px;
+left: calc(50% - (-90px));
+top: 5vh;
 
 font-family: 'Pretendard';
 font-style: normal;
@@ -326,7 +344,7 @@ position: absolute;
 width: 680px;
 height: 200px;
 left: calc(50% - 680px/2 + 10px);
-top: 1020px;
+margin-top: 12.5vh;
 
 background: #D9D9D9;
 border-radius: 16px;
@@ -338,8 +356,8 @@ border-radius: 16px;
 position: absolute;
 width: 283px;
 height: 190px;
-left: 300px;
-top: 930px;
+left: calc(50% - 450px);
+margin-top:-1vh;
 
 background: url("../img/goormguide.svg");
 filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
@@ -354,7 +372,7 @@ position: absolute;
 width: 325px;
 height: 150px;
 left: calc(50% - 250px/2 - 200px);
-top: 1250px;
+margin-top: 42.5vh;
 
 background: #D9D9D9;
 border-radius: 16px;
@@ -368,7 +386,7 @@ position: absolute;
 width: 325px;
 height: 150px;
 left: calc(50% - 400px/2 + 220px);
-top: 1250px;
+margin-top: 42.5vh;
 
 background: #D9D9D9;
 border-radius: 16px;
@@ -379,8 +397,8 @@ border-radius: 16px;
 position: absolute;
 width: 132px;
 height: 86px;
-left: 1024px;
-top: 1370px;
+left: calc(50% - (-260px));
+margin-top: 55vh;
 
 background: url("../img/goormguidefooter.svg");
 filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
@@ -388,14 +406,20 @@ background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
 transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 
 }
+.MedKnowledgeContainer{
+    position: absolute;
+    margin-top:40vw;
+    width:100%;
+    height: 100vh*0.5;
+}
 .MedKnowledge{
     /* 구름 상식 */
 
 position: absolute;
 width: 89px;
 height: 29px;
-left: 430px;
-top: 1450px;
+left: calc(50% - 330px);
+margin-top: 110vh;
 
 font-family: 'Pretendard';
 font-style: normal;
@@ -418,7 +442,7 @@ position: absolute;
 width: 160px;
 height: 200px;
 left: calc(50% - 194px/2 - 235px);
-top: 1530px;
+margin-top: 117.5vh;
 background: #D9D9D9;
 border-radius: 16px;
 
@@ -430,7 +454,7 @@ position: absolute;
 width: 160px;
 height: 200px;
 left: calc(50% - 194.63px/2 - 60px);
-top: 1530px;
+margin-top: 117.5vh;
 background: #D9D9D9;
 border-radius: 16px;
 
@@ -442,7 +466,7 @@ position: absolute;
 width: 160px;
 height: 200px;
 left: calc(50% - 194.63px/2 + 115px);
-top: 1530px;
+margin-top: 117.5vh;
 
 background: #D9D9D9;
 border-radius: 16px;
@@ -455,7 +479,7 @@ position: absolute;
 width: 160px;
 height: 200px;
 left: calc(50% - 194.63px/2 + 290px);
-top: 1530px;
+margin-top: 117.5vh;
 background: #D9D9D9;
 border-radius: 16px;
 
@@ -467,7 +491,7 @@ position: absolute;
 width: 165px;
 height: 120px;
 left: calc(50% - 425px); 
-top: 1730px;
+margin-top: 143vh;
 
 background: url("../img/KnowledgeGoorm.svg");
 filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
@@ -610,7 +634,10 @@ border: 2px solid #000958;
 
     color: #000000;
 }
-
+.nav{
+    position: absolute;
+    right: 700px;
+}
 .logout{
 
     /* 로그아웃 */
@@ -1110,250 +1137,291 @@ color: #000958;
 
     color: #000000;
 }
+//마이페이지
+.MyIcon{
 
 
+
+/* Ellipse 35 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 95px;
+height: 95px;
+left: calc(50% - 320px);
+top: 202px;
+
+background: linear-gradient(180deg, #DFDFDF 0%, rgba(217, 217, 217, 0) 100%);
+/* main color */
+border: 2px solid #AAB3FF;
+border-radius: 50%;
+box-shadow: inset 6px 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+.MyIcon img{
+    position: absolute;
+    width: 200px;
+
+}
 
 .LoginPage-goorm1{ /* login 큰 구름 */
-position: absolute;
-top: 10%;
-left: calc(50% + 150px);
-}
-
-.LoginPage-goorm2{ /* login 작은 구름 */
-position: absolute;
-top: calc(10% + 550px);
-right: calc(50% + 250px);
-}
-
-.LoginPage-nav { /* login 내비게이션 */
-position: absolute;
-top: 42px;
-right: 70px;
+    position: absolute;
+    top: 10%;
+    left: calc(50% + 150px);
+    }
     
-font-family: 'Pretendard';
-font-size: 14px;
-font-weight: 600;
-word-spacing: 10px;
-}
-.LoginPage-nav span {
-color: #878787;
-font-weight: 800;
-}
+    .LoginPage-goorm2{ /* login 작은 구름 */
+    position: absolute;
+    top: calc(10% + 550px);
+    right: calc(50% + 250px);
+    }
+    
+    .LoginPage-nav { /* login 내비게이션 */
+    position: absolute;
+    top: 42px;
+    right: 70px;
+        
+    font-family: 'Pretendard';
+    font-size: 14px;
+    font-weight: 600;
+    word-spacing: 10px;
+    }
+    .LoginPage-nav span {
+    color: #878787;
+    font-weight: 800;
+    }
+    
+    .LoginPage-main { 
+    flex-direction: column;
+    margin-top:212px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .loginBox{ /* login 박스 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    width: 700px;
+    height: 530px;
+    border-radius: 16px;
+    border: 1px solid #AAB3FF;
+    box-shadow: 0px 0px 25px 7px rgba(170, 179, 255, 0.30);
+    font-family: 'Pretendard';
+    }
+    
+    .loginBox-title{ /* 로그인 */
+    margin-bottom: 46px;
+    color:  #000958;
+    font-size: 28px;
+    font-weight: 700;
+    }
+    
+    .loginBox-contents{ /* 아이디, 비밀번호 */
+    margin-bottom: 8px;
+    color: #000958;
+    font-size: 16px;
+    font-weight: 600;
+    }
+    
+    .login-tf{ /* login id input */
+    display: flex;
+    justify-items: center;
+    width: 460px;
+    height: 58px;
+    border-radius: 16px;
+    border: 1px solid #AAB3FF;
+    box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
+    }
+    .login-tf img{ 
+    width: 19px;
+    height: 19px;
+    padding: 20px 10px 20px 20px;
+    }
+    
+    .login-tf input{ /* id, pw 입력부분 */
+    width: 355px;
+    border: none;
+    outline: none;
+    color: #000958;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 500;
+    }
+    
+    .check{
+    margin-top: 9px;
+    display: flex;
+    }
+    
+    .checkBox { /* 로그인 상태 체크박스 */
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    background: url("../img/isCheckedFalse.svg") no-repeat center center;
+    }
+    .checkBox:checked {
+    background: url("../img/isCheckedTrue.svg") no-repeat center center;
+    }
+    
+    .checkText{ /* 로그인 상태 유지 */
+    margin-top: 7px;
+    color:  #000958;
+    font-family: 'Pretendard';
+    font-size: 10px;
+    font-weight: 600;
+    line-height: normal;
+    }
+    
+    .loginBtn{ 
+    margin-top: 62px;
+    width: 200px;
+    height: 50px;
+    border-radius: 16px;
+    background:#000958;
+    box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
+    
+    color: #FFF;
+    text-align: center;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    }
+    
+    .goRegister{ /* 회원가입하러 가기 */
+    padding: 28px 0; 
+    color: #000;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 700;
+    }
+    
+    
+    .register-main{
+    flex-direction: column;
+    margin-top: 145px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .register-svg{
+    height: 925px;
+    }
+    
+    .register-box{
+    position: absolute;
+    top: 274px;
+    width: 700px;
+    height: 680px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .register-title{
+    color:  #000958;
+    font-size: 28px;
+    font-weight: 700;
+    }
+    
+    .register-tf{ 
+    margin-bottom: 45px;
+    display: flex;
+    justify-items: center;
+    width: 460px;
+    height: 58px;
+    border-radius: 16px;
+    border: 1px solid #AAB3FF;
+    box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
+    }
+    
+    .register-tf input{
+    margin-left: 10px;
+    width: 355px;
+    border: none;
+    outline: none;
+    color: #000958;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 500;
+    }
+    
+    .registerBtn{ 
+    margin-top: 30px;
+    width: 200px;
+    height: 50px;
+    border-radius: 16px;
+    background:#000958;
+    box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
+    
+    color: #FFF;
+    text-align: center;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    }
+    
+    .welcome{
+    padding: 5px 0 25px;
+    color: #AAB3FF;
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 600;
+    }
+    
+    .goLogin{ /* 로그인하러 가기 */
+    margin-top: -37px;
+    color: #000;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 700;
+    }
+    
+    .pw-message{
+    position:absolute;
+    top: 374px;
+    right:130px;
+    color: #878787;
+    font-family: 'Pretendard';
+    font-size: 10px;
+    font-weight: 600;
+    }
+    
+    .id-message{
+    position:absolute;
+    top: 240px;
+    right:130px;
+    color: #878787;
+    font-family: 'Pretendard';
+    font-size: 10px;
+    font-weight: 600;
+    }
 
-.LoginPage-main { 
-flex-direction: column;
-margin-top:212px;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-.loginBox{ /* login 박스 */
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-
-width: 700px;
-height: 530px;
-border-radius: 16px;
-border: 1px solid #AAB3FF;
-box-shadow: 0px 0px 25px 7px rgba(170, 179, 255, 0.30);
-font-family: 'Pretendard';
-}
-
-.loginBox-title{ /* 로그인 */
-margin-bottom: 46px;
-color:  #000958;
-font-size: 28px;
-font-weight: 700;
-}
-
-.loginBox-contents{ /* 아이디, 비밀번호 */
-margin-bottom: 8px;
-color: #000958;
-font-size: 16px;
-font-weight: 600;
-}
-
-.login-tf{ /* login id input */
-display: flex;
-justify-items: center;
-width: 460px;
-height: 58px;
-border-radius: 16px;
-border: 1px solid #AAB3FF;
-box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
-}
-.login-tf img{ 
-width: 19px;
-height: 19px;
-padding: 20px 10px 20px 20px;
-}
-
-.login-tf input{ /* id, pw 입력부분 */
-width: 355px;
-border: none;
-outline: none;
-color: #000958;
-font-family: 'Pretendard';
-font-size: 16px;
-font-weight: 500;
-}
-
-.check{
-margin-top: 9px;
-display: flex;
-}
-
-.checkBox { /* 로그인 상태 체크박스 */
-appearance: none;
-width: 20px;
-height: 20px;
-border: none;
-border-radius: 50%;
-outline: none;
-cursor: pointer;
-background: url("../img/isCheckedFalse.svg") no-repeat center center;
-}
-.checkBox:checked {
-background: url("../img/isCheckedTrue.svg") no-repeat center center;
-}
-
-.checkText{ /* 로그인 상태 유지 */
-margin-top: 7px;
-color:  #000958;
-font-family: 'Pretendard';
-font-size: 10px;
-font-weight: 600;
-line-height: normal;
-}
-
-.loginBtn{ 
-margin-top: 62px;
-width: 200px;
-height: 50px;
-border-radius: 16px;
-background:#000958;
-box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
-
-color: #FFF;
-text-align: center;
-font-family: 'Pretendard';
-font-size: 16px;
-font-weight: 700;
-cursor: pointer;
-}
-
-.goRegister{ /* 회원가입하러 가기 */
-padding: 28px 0; 
-color: #000;
-font-family: 'Pretendard';
-font-size: 16px;
-font-weight: 700;
-}
 
 
-.register-main{
-flex-direction: column;
-margin-top: 145px;
-display: flex;
-justify-content: center;
-align-items: center;
-}
 
-.register-svg{
-height: 925px;
-}
 
-.register-box{
-position: absolute;
-top: 274px;
-width: 700px;
-height: 680px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-}
 
-.register-title{
-color:  #000958;
-font-size: 28px;
-font-weight: 700;
-}
 
-.register-tf{ 
-margin-bottom: 45px;
-display: flex;
-justify-items: center;
-width: 460px;
-height: 58px;
-border-radius: 16px;
-border: 1px solid #AAB3FF;
-box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
-}
 
-.register-tf input{
-margin-left: 10px;
-width: 355px;
-border: none;
-outline: none;
-color: #000958;
-font-family: 'Pretendard';
-font-size: 16px;
-font-weight: 500;
-}
 
-.registerBtn{ 
-margin-top: 30px;
-width: 200px;
-height: 50px;
-border-radius: 16px;
-background:#000958;
-box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
 
-color: #FFF;
-text-align: center;
-font-family: 'Pretendard';
-font-size: 16px;
-font-weight: 700;
-cursor: pointer;
-}
 
-.welcome{
-padding: 5px 0 25px;
-color: #AAB3FF;
-text-align: center;
-font-family: 'Inter';
-font-size: 14px;
-font-weight: 600;
-}
 
-.goLogin{ /* 로그인하러 가기 */
-margin-top: -37px;
-color: #000;
-font-family: 'Pretendard';
-font-size: 16px;
-font-weight: 700;
-}
 
-.pw-message{
-position:absolute;
-top: 374px;
-right:130px;
-color: #878787;
-font-family: 'Pretendard';
-font-size: 10px;
-font-weight: 600;
-}
 
-.id-message{
-position:absolute;
-top: 240px;
-right:130px;
-color: #878787;
-font-family: 'Pretendard';
-font-size: 10px;
-font-weight: 600;
-}
+
+

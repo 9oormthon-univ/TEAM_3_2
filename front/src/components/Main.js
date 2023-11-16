@@ -42,7 +42,7 @@ const Main = ({ username, onLogout, onSearch, searchResults }) => {
       <Background />
       <MedGuideBox />
       <MedKnowledgeBox />
-      <Footer footerTop={"1875px"}/>
+      <Footer footerTop={"1875px"} />
     </div>
   );
 };
