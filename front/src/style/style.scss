@@ -980,6 +980,137 @@ color: #FFFFFF;
 
 }
 
+//부작용 컨테이너
+.SideEffect-Container{
+    /* Rectangle 52 */
+
+box-sizing: border-box;
+
+position: absolute;
+
+height: 300px;
+width: 550px;
+left: calc(50% - 275px);
+top: 760px;
+
+background: #FFFFFF;
+/* main color */
+border: 1px solid #AAB3FF;
+box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+border-radius: 16px;
+
+}
+.sideEffectText{
+/* 부작용 */
+
+position: absolute;
+width: 57px;
+height: 15px;
+left: calc(50% - 240px);
+top: 20px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+
+/* snb color 2 */
+color: #000958;
+
+
+}
+.sideEffectImgContainer{
+    position: absolute;
+    margin-top: 9vh;
+    margin-left: 7.5%;
+    width: 100%;
+    display: flex;
+    gap: 35px;
+}
+.sideEffectImgContainer img{
+    width: 30px;
+}
+.sideEffectTypeContainer{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    top: 110px;
+    gap: 16px;
+    margin-left: 28px;
+
+}
+.sideEffectType{
+    width: 50px;
+    height: 15px;
+    background: #AAB3FF;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 8px;
+    line-height: 10px;
+    color: #FFFFFF;
+}
+.sideEffectInfo{
+    /* 약물의 종류에 따라 정도가 다르지만 대표적인 부작용은 졸음, 진정작용과 같은 중추신경계 부작용이다. */
+    position: absolute;
+    width: 553px;
+    height: 17px;
+    left: calc(50% - 245px);
+    top: 140px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9.5px;
+    line-height: 17px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.sideEffectWarning{
+    /* 주의사항 & 해결방안 */
+    position: absolute;
+    width: 259px;
+    height: 15px;
+    left: calc(50% - 240px);
+    top: 170px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    /* snb color 2 */
+    color: #000958;
+}
+.sideEffectWarningInfo{
+    /* 자동차 운전이나 위험을 수반하는 기계조작, 집중을 요하는 작업에 종사하는 사람들은 복용하지 않도록 한다. 항콜린 작용에 의한 배뇨 및 시력장애가 나타날 수 있으므로 전립선비대증 환자나 녹내장 환자에게는 투여하지 않도록 한다. 중추신경억제제 또는 항콜린성 약물과 병용투여 시 용량 조절이 요구될 수 있다. 졸음, 진정작용과 같은 중추신경계 부작용이 증가될 수 있으므로 항히스타민제 복용 시 알코올을 섭취하지 않도록 한다. */
+
+    position: absolute;
+    width: 460px;
+    height: 68px;
+    left: calc(50% - 245px);
+    top: 210px;
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9.5px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
 .LoginPage-nav {
     /* /login navigation */
 position: absolute;

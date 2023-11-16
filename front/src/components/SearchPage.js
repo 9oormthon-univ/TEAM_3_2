@@ -6,6 +6,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Nav from "../module/Nav";
 import RelationMed from "../module/RelationMed";
 import handleSearch from "../service/SearchService";
+import SideEffect from "../module/SideEffect";
+import Footer from "../module/Footer";
 
 const SearchPage = ({ username, onLogout, onSearch, searchResults }) => {
   const navigate = useNavigate();
@@ -43,6 +45,8 @@ const SearchPage = ({ username, onLogout, onSearch, searchResults }) => {
       <Nav username={username} onLogout={handleLogout} />
       <MedInfo value={searchQuery} searchResults={searchResults} />
       <RelationMed />
+      <SideEffect />
+      <Footer footerTop={"1200px"} />
     </div>
   );
 };
