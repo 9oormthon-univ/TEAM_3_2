@@ -7,6 +7,7 @@ import SearchPage from "./components/SearchPage";
 import handleSearch from "./service/SearchService";
 import MyPage from "./components/MyPage";
 import "./style/style.scss";
+import "./style/style_1.scss";
 
 const App = () => {
   const [loginUsername, setLoginUsername] = React.useState("");
