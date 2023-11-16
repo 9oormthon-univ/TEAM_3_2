@@ -1,11 +1,15 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 const Nav = ({ username, onLogout }) => {
+  const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const idFromQuery = params.get("id");
 
   const isLoggedIn = !!username || !!idFromQuery;
+  const handleMypage = () => {
+    navigate(`/mypage?id=${username}`);
+  };
 
   return (
     <div className="nav">
@@ -23,7 +27,9 @@ const Nav = ({ username, onLogout }) => {
             : "",
         }}
       ></div>
-      <div className="my-page">마이페이지</div>
+      <div className="my-page" onClick={handleMypage}>
+        마이페이지
+      </div>
       <div className="logout" onClick={onLogout}>
         로그아웃
       </div>

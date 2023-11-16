@@ -5,6 +5,7 @@ import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
 import SearchPage from "./components/SearchPage";
 import handleSearch from "./service/SearchService";
+import MyPage from "./components/MyPage";
 import "./style/style.scss";
 
 const App = () => {
@@ -67,6 +68,10 @@ const App = () => {
               onLogout={handleLogout}
             />
           }
+        />
+        <Route
+          path="/mypage"
+          element={<MyPage username={loginUsername} onLogout={handleLogout} />}
         />
       </Routes>
     </Router>
