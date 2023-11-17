@@ -30,7 +30,7 @@ const Main = ({ username, onLogout, onSearch, searchResults }) => {
   const handleLogout = () => {
     // 로그아웃 로직
     onLogout();
-    // 홈페이지로 리다이렉트 또는 다른 동작을 수행할 수 있습니다.
+    // 홈페이지로 리다이렉트 또는 다른 동작을 수행할 수 있습니다.1
     navigate("/login");
   };
 

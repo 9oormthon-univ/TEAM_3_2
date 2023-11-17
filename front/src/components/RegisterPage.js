@@ -21,7 +21,8 @@ const RegisterPage = ({ onRegister }) => {
     handleRegister(email, password, nickname, onRegister, navigate);
   };
 
-  const validatePassword = (password) => { // 영문+숫자, 8~16자 확인
+  const validatePassword = (password) => {
+    // 영문+숫자, 8~16자 확인
     const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d).{8,16}$/;
     const isValid = passwordRegex.test(password);
     setPasswordValid(isValid);
@@ -38,7 +39,8 @@ const RegisterPage = ({ onRegister }) => {
     setIsTyping(false);
   };
 
-  const validateEmail = (email) => { // 이메일 형식 및 '@' 포함 여부 확인
+  const validateEmail = (email) => {
+    // 이메일 형식 및 '@' 포함 여부 확인!
     const emailRegex = /^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]+$/;
     const isValidEmail = emailRegex.test(email);
     setEmailValid(isValidEmail);
@@ -55,7 +57,7 @@ const RegisterPage = ({ onRegister }) => {
     setIsTypingEmail(false);
   };
   const goLogin = () => {
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
@@ -84,14 +86,17 @@ const RegisterPage = ({ onRegister }) => {
               <div className="id-message">
                 {emailValid ? (
                   <>
-                    <img src={Valid} alt="Valid Email" />        
-                    <span className="validateMessage">사용 가능한 이메일입니다.</span>
+                    <img src={Valid} alt="Valid Email" />
+                    <span className="validateMessage">
+                      사용 가능한 이메일입니다.
+                    </span>
                   </>
-
                 ) : (
                   <>
                     <img src={InValid} alt="Invalid Email" />
-                    <span className="validateMessage">사용 불가능한 이메일입니다.</span>
+                    <span className="validateMessage">
+                      사용 불가능한 이메일입니다.
+                    </span>
                   </>
                 )}
               </div>
@@ -111,13 +116,19 @@ const RegisterPage = ({ onRegister }) => {
                 {passwordValid ? (
                   <>
                     <img src={Valid} alt="Valid Password" />
-                    <span className="validateMessage">사용 가능한 비밀번호입니다.</span>
-                  </>   
+                    <span className="validateMessage">
+                      사용 가능한 비밀번호입니다.
+                    </span>
+                  </>
                 ) : (
                   <>
-                    <span className="pw-redMessage">* 8~16자의 영문, 숫자를 사용해주세요.</span>
+                    <span className="pw-redMessage">
+                      * 8~16자의 영문, 숫자를 사용해주세요.
+                    </span>
                     <img src={InValid} alt="Invalid Password" />
-                    <span className="validateMessage">사용 불가능한 비밀번호입니다.</span>
+                    <span className="validateMessage">
+                      사용 불가능한 비밀번호입니다.
+                    </span>
                   </>
                 )}
               </div>
