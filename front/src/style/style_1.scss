@@ -264,6 +264,9 @@ font-weight: 600;
 }
 
 .MyPage-main{
+   position: relative;
+   top: 73vh;
+   display: flex;
    flex-direction: column;
    display: flex;
    justify-content: center;
@@ -322,6 +325,7 @@ font-weight: 600;
 .Mypage-caution { /*부작용&주의사항*/
    position: relative;
    margin-top: 50px;
+   margin-bottom: 50px;
    width: 800px;
    min-height: 245px;
    border-radius: 16px;
@@ -350,6 +354,7 @@ font-weight: 600;
  .Mypage-caution-content { /*약 이름 + 주의사항 컨테이너*/
    width: 760px;
    margin-left: 210px;
+
  }
  
  .Mypage-caution-name { /*약 이름*/
