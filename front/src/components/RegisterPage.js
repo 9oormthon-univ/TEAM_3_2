@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import handleRegister from "../service/RegisterService";
 import Logo from "../module/Logo";
 import Footer from "../module/Footer";
 import { ReactComponent as Register } from "../img/register.svg";
-import ValidPw from "../img/validPw.svg";
-import Valid from "../img/valid.svg";
+import Valid from "../img/isCheckedTrue.svg";
 import InValid from "../img/invalid.svg";
 
 const RegisterPage = ({ onRegister }) => {
@@ -84,9 +83,16 @@ const RegisterPage = ({ onRegister }) => {
             {!isTypingEmail && email && (
               <div className="id-message">
                 {emailValid ? (
-                  <img src={Valid} alt="Valid Email" />
+                  <>
+                    <img src={Valid} alt="Valid Email" />        
+                    <span className="validateMessage">사용 가능한 이메일입니다.</span>
+                  </>
+
                 ) : (
-                  <img src={InValid} alt="Invalid Email" />
+                  <>
+                    <img src={InValid} alt="Invalid Email" />
+                    <span className="validateMessage">사용 불가능한 이메일입니다.</span>
+                  </>
                 )}
               </div>
             )}
@@ -103,9 +109,16 @@ const RegisterPage = ({ onRegister }) => {
             {!isTyping && password && (
               <div className="pw-message">
                 {passwordValid ? (
-                  <img src={ValidPw} alt="Valid Password" />
+                  <>
+                    <img src={Valid} alt="Valid Password" />
+                    <span className="validateMessage">사용 가능한 비밀번호입니다.</span>
+                  </>   
                 ) : (
-                  <img src={InValid} alt="Invalid Password" />
+                  <>
+                    <span className="pw-redMessage">* 8~16자의 영문, 숫자를 사용해주세요.</span>
+                    <img src={InValid} alt="Invalid Password" />
+                    <span className="validateMessage">사용 불가능한 비밀번호입니다.</span>
+                  </>
                 )}
               </div>
             )}

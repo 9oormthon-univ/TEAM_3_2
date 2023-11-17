@@ -223,6 +223,16 @@ font-size: 16px;
 font-weight: 700;
 }
 
+.validateMessage{
+   position: relative;
+   top: -2px;
+   left: 5px;
+   color: #000958;
+   font-family: 'Pretendard';
+   font-size: 10px;
+   font-weight: 600;
+}
+
 .pw-message{
 position:absolute;
 top: 374px;
@@ -231,6 +241,16 @@ color: #878787;
 font-family: 'Pretendard';
 font-size: 10px;
 font-weight: 600;
+}
+
+.pw-redMessage{
+   position: relative;
+   top: -2px;
+   right: 142px;
+   color: #FF6A6A;
+   font-family: 'Pretendard';
+   font-size: 11px;
+   font-weight: 600;
 }
 
 .id-message{
