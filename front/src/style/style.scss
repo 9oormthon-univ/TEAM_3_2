@@ -732,6 +732,44 @@ height: 13px;
 left:calc(50% - 32.5px);
 top:5.5px;
 }
+.ListAllerge{
+    position: absolute;
+    width: 100%;
+    top: 30vh;
+}
+.AllergeContainerList {
+    box-sizing: border-box;
+width: 550px;
+height: 150px;
+margin-left: calc(50% - 275px);
+margin-top: 40px;
+background: #FFFFFF;
+/* main color */
+border: 1px solid #AAB3FF;
+box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+border-radius: 16px;
+}
+.MedTitleList{
+    /* 항히스타민제 */
+
+    width: 100px;
+    height: 15px;
+ margin-left: 2vw;
+    margin-top: 10px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+
+/* main color */
+color: #AAB3FF;
+
+
+}
 .AllergeContainer{
     /* Rectangle 51 */
 

@@ -1,8 +1,11 @@
 import React from "react";
 import Med1 from "../img/Med1.svg";
 import PlusCircle from "../img/plus-circle.svg";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 const MedInfo = ({ username, value }) => {
+  const location = useLocation();
+  const { searchResults } = location.state || {};
   const handleAddMed = async () => {
     try {
       const response = await axios.post("http://localhost:8000/addMedication", {
@@ -12,33 +15,30 @@ const MedInfo = ({ username, value }) => {
       console.log(response);
     } catch {}
   };
+  console.log("검색 페이이이이", searchResults);
+
   return (
     <div>
       <div className="AllergicAdd" onClick={handleAddMed}>
-        <img className="plus-circle" src={PlusCircle}></img>
+        <img className="plus-circle" src={PlusCircle} alt="Plus Circle" />
         <span>알러지 등록</span>
       </div>
-      <div className="AllergeContainer">
-        <div className="MedTitle">{value}</div>
-        <div className="MedIngredients">
-          <span>약의 성분</span>
-          <div className="MedIngredientsInfo">
-            세포증식, 분화와 혈구 생성, 염증반응, 조직 재생과 신경전달 등에
-            관여하는 단백질
+      {searchResults.map((result, index) => (
+        <div className="AllergeContainer" key={index}>
+          <div className="MedTitle">{result.약이름}</div>
+          <div className="MedIngredients">
+            <span>{result.성분}</span>
+            <div className="MedIngredientsInfo">{result.성분내용}</div>
+          </div>
+          <div className="MedEfficacy">
+            <span>{result.약효능효과}</span>
+            <div className="MedEfficacyInfo">{result.효능효과내용}</div>
+          </div>
+          <div className="MedImageContainer">
+            <img src={result.약이미지} alt="Med1" />
           </div>
         </div>
-        <div className="MedEfficacy">
-          <span>효능 및 효과</span>
-          <div className="MedEfficacyInfo">
-            항히스타민제는 두드러기, 발적, 소양감 등의 알레르기성 반응에
-            관여하는 히스타민의 작용을 억제하는 약물이다. 알레르기성 질환 외에도
-            콧물, 재채기, 불면, 어지럼증, 구토 멀미 등을 완화하는데 사용된다.
-          </div>
-        </div>
-        <div className="MedImageContainer">
-          <img src={Med1}></img>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };

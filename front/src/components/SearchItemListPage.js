@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import Logo from "../module/Logo";
 import Search from "../module/Search";
-import MedInfo from "../module/MedInfo";
+import MedList from "../module/MedList";
 import { useNavigate, useLocation } from "react-router-dom";
 import Nav from "../module/Nav";
-import RelationMed from "../module/RelationMed";
-import handleSearch from "../service/SearchService";
-import SideEffect from "../module/SideEffect";
 import Footer from "../module/Footer";
 
-const SearchPage = ({
+const SearchItemListPage = ({
   username,
   onLogout,
   onSearch,
   onSearchList,
   searchResults,
+  searchListResults,
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -28,9 +26,9 @@ const SearchPage = ({
       console.log(`검색어: ${query}`);
       const userId = username || idFromQuery;
       const pageNo = 1;
-      onSearch(query, userId);
+      //   onSearch(query, userId);
       onSearchList(query, pageNo);
-
+      onSearch(query, userId);
       navigate(`/searchList?id=${userId}&query=${query}`);
     } catch (error) {
       console.error("검색 중 오류 발생:", error.message);
@@ -49,16 +47,16 @@ const SearchPage = ({
       <Logo />
       <Search onSearch={handleSearchCallback} value={searchQuery} />
       <Nav username={username} onLogout={handleLogout} />
-      <MedInfo
+      <MedList
         username={username}
         value={searchQuery}
         searchResults={searchResults}
+        searchListResults={searchListResults}
+        onSearch={handleSearchCallback}
       />
-      <RelationMed />
-      <SideEffect />
       <Footer footerTop={"1200px"} />
     </div>
   );
 };
 
-export default SearchPage;
+export default SearchItemListPage;

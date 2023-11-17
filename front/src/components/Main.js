@@ -8,8 +8,15 @@ import MedGuideBox from "../module/MedGuideBox";
 import MedKnowledgeBox from "../module/MedKnowledgeBox";
 import Footer from "../module/Footer";
 import handleSearch from "../service/SearchService";
+import MedInfo from "../module/MedInfo";
 
-const Main = ({ username, onLogout, onSearch, searchResults }) => {
+const Main = ({
+  username,
+  onLogout,
+  onSearch,
+  onSearchList,
+  searchResults,
+}) => {
   const [searchQuery, setSearchQuery] = React.useState("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -19,12 +26,14 @@ const Main = ({ username, onLogout, onSearch, searchResults }) => {
     setSearchQuery(query);
     console.log(`검색어: ${query}`);
     const idFromQuery = params.get("id");
+    const pageNo = 1;
     const userId = idFromQuery;
 
     // Call the common onSearch callback
     onSearch(query, userId);
+    onSearchList(query, pageNo);
 
-    navigate(`/search?id=${userId}&query=${query}`);
+    navigate(`/searchList?id=${userId}&query=${query}`);
   };
 
   const handleLogout = () => {

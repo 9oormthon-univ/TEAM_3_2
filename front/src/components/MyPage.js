@@ -23,7 +23,7 @@ const MyPage = ({ username, onLogout }) => {
         if (response.status === 200) {
           const userData = response.data;
           setEmail(userData.이메일);
-          setMedicineId(userData.medicineId)
+          setMedicineId(userData.medicineId);
         } else {
           console.error("Error during email retrieval:", response.statusText);
         }

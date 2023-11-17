@@ -31,11 +31,14 @@ const handleRegister = async (
     }
 
     // 서버에 등록 요청 보냄
-    const response = await axios.post("http://localhost:8000/api/v1/auth/signup", {
-      이메일: email,
-      비밀번호: password,
-      닉네임: nickname,
-    });
+    const response = await axios.post(
+      "http://localhost:8000/api/v1/auth/signup",
+      {
+        이메일: email,
+        비밀번호: password,
+        닉네임: nickname,
+      }
+    );
 
     const data = response.data;
     console.log("등록된 사용자:", data.email);

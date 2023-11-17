@@ -6,12 +6,15 @@ import RegisterPage from "./components/RegisterPage";
 import SearchPage from "./components/SearchPage";
 import handleSearch from "./service/SearchService";
 import MyPage from "./components/MyPage";
+import SearchItemListPage from "./components/SearchItemListPage";
+import handleSearchList from "./service/SearchListService";
 import "./style/style.scss";
 import "./style/style_1.scss";
 
 const App = () => {
   const [loginUsername, setLoginUsername] = React.useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [searchListResults, setSearchListResults] = useState([]);
   const handleSearchCallback = async (query, userId) => {
     // Similar to your existing search logic
     try {
@@ -21,7 +24,15 @@ const App = () => {
       console.error("검색 중 오류 발생:", error.message);
     }
   };
-
+  const handleSearchListCallback = async (query, pageNo) => {
+    // Similar to your existing search logic
+    try {
+      const results = await handleSearchList(query, pageNo);
+      setSearchListResults(results);
+    } catch (error) {
+      console.error("검색 중 오류 발생:", error.message);
+    }
+  };
   // 로그인 처리 함수
   const handleLogin = (username) => {
     setLoginUsername(username);
@@ -47,6 +58,7 @@ const App = () => {
           element={
             <Main
               onSearch={handleSearchCallback}
+              onSearchList={handleSearchListCallback}
               searchResults={searchResults}
               username={loginUsername}
               onLogout={handleLogout}
@@ -60,10 +72,23 @@ const App = () => {
           element={<RegisterPage onRegister={handleRegister} />}
         />
         <Route
+          path="/searchList"
+          element={
+            <SearchItemListPage
+              onSearchList={handleSearchListCallback}
+              username={loginUsername}
+              searchResults={searchResults}
+              searchListResults={searchListResults}
+              onLogout={handleLogout}
+            />
+          }
+        />
+        <Route
           path="/search"
           element={
             <SearchPage
               onSearch={handleSearchCallback}
+              onSearchList={handleSearchListCallback}
               username={loginUsername}
               searchResults={searchResults}
               onLogout={handleLogout}
