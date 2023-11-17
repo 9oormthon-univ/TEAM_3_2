@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Logo from "../module/Logo";
 import Nav from "../module/Nav";
 import MyProfile from "../module/MyProfile";
-import { useNavigate } from "react-router-dom";
 import MedShouldNotTake from "../module/MedShouldNotTake";
 import MedSideEffect from "../module/MedSideEffect";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const MyPage = ({ username, onLogout }) => {
-  const [email, setEmail] = React.useState(null);
-  const [medicineId, setMedicineId] = "";
+  const [email, setEmail] = useState(null);
+  const [selectedMedication, setSelectedMedication] = useState(null); // 선택된 약 이름
   const navigate = useNavigate();
 
-  React.useEffect(() => {
-    // Fetch the email information
+  useEffect(() => {
     const fetchEmail = async () => {
       try {
         const response = await axios.get(
@@ -23,7 +22,6 @@ const MyPage = ({ username, onLogout }) => {
         if (response.status === 200) {
           const userData = response.data;
           setEmail(userData.이메일);
-          setMedicineId(userData.medicineId);
         } else {
           console.error("Error during email retrieval:", response.statusText);
         }
@@ -34,20 +32,27 @@ const MyPage = ({ username, onLogout }) => {
 
     fetchEmail();
   }, [username]);
+
   const handleLogout = () => {
     // 로그아웃 로직
     onLogout();
     // 홈페이지로 리다이렉트 또는 다른 동작을 수행할 수 있습니다.
     navigate("/login");
   };
+
+  const handleMedicationSelect = (medication) => { // 선택된 약 이름 저장
+    setSelectedMedication(medication);
+  };
+
   return (
     <div>
       <Logo />
       <Nav username={username} onLogout={handleLogout} />
       <MyProfile username={username} email={email} />
-      <MedShouldNotTake username={username} />
-      <MedSideEffect medicineId={medicineId} />
+      <MedShouldNotTake username={username} medicineName={handleMedicationSelect}/>
+      <MedSideEffect medicineName={selectedMedication} />
     </div>
   );
 };
+
 export default MyPage;
