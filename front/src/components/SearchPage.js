@@ -43,7 +43,11 @@ const SearchPage = ({ username, onLogout, onSearch, searchResults }) => {
       <Logo />
       <Search onSearch={handleSearchCallback} value={searchQuery} />
       <Nav username={username} onLogout={handleLogout} />
-      <MedInfo value={searchQuery} searchResults={searchResults} />
+      <MedInfo
+        username={username}
+        value={searchQuery}
+        searchResults={searchResults}
+      />
       <RelationMed />
       <SideEffect />
       <Footer footerTop={"1200px"} />

@@ -1147,11 +1147,14 @@ color: #000958;
 box-sizing: border-box;
 
 position: absolute;
-width: 95px;
-height: 95px;
-left: calc(50% - 320px);
-top: 202px;
+width: 110px;
+height: 110px;
+left: calc(50% - 400px);
+top: 160px;
 
+display: flex;
+justify-content: center;
+align-items: center;
 background: linear-gradient(180deg, #DFDFDF 0%, rgba(217, 217, 217, 0) 100%);
 /* main color */
 border: 2px solid #AAB3FF;
@@ -1160,8 +1163,184 @@ box-shadow: inset 6px 4px 8px rgba(0, 0, 0, 0.2);
 
 }
 .MyIcon img{
-    position: absolute;
-    width: 200px;
+    width: 145px;
+    height: 145px;
+    margin-left: 0.4vw;
 
 }
+.MyProfile-username{
+    /* 김구름님, */
 
+position: absolute;
+width: 206px;
+height: 43px;
+margin-left: calc(50% - 260px);
+margin-top: 22vh;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 28px;
+line-height: 38px;
+display: flex;
+align-items: center;
+
+/* snb color 2 */
+color: #000958;
+
+
+}
+.MyProfile-email{
+
+
+/* Rectangle 60 */
+
+position: absolute;
+width: 277px;
+height: 33px;
+margin-left: calc(50% - 260px);
+margin-top: 29vh;
+
+/* snb color 2 */
+background: #000958;
+border-radius: 30px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+.MedShouldNotTakeContainer{
+    /* 로그인창 */
+    position: absolute;
+    margin-top: 42vh;
+    left: calc(50% - 400px);
+    width: 800px;
+    min-height: 245px;
+    border-radius: 16px;
+    border: 1px solid #AAB3FF;
+    background: #FFF;
+    box-shadow: 0px 0px 25px 7px rgba(170, 179, 255, 0.30);
+}
+.MedShouldNotTakeContainer h1{
+    position: absolute;
+    margin-top: 4vh;
+    margin-left: 2vw;
+    color: #000958;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 800;
+}
+.Med{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 2px;
+}
+.addMedCircle{
+   /* Rectangle 64 */
+box-sizing: border-box;
+
+width: 85px;
+height: 30px;
+margin-left: 17.5px;
+margin-right: 10px;
+margin-top: 80px;
+
+text-align: center;
+justify-content: center;
+background: #AAB3FF;
+/* main color */
+border: 2px solid #AAB3FF;
+border-radius: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+/* 항 히스타민제 */
+
+}
+.addMedCircle p{
+    position: absolute;
+    font-family: 'Pretendard';
+    display: flex;
+font-style: normal;
+font-weight: 600;
+font-size: 10px;
+color: #FFFFFF;
+}
+.addMedSearch{
+    /* Rectangle 75 */
+
+position: absolute;
+width: 150px;
+height: 35px;
+left: 66.5vw;
+margin-top: 22vh;
+/* main color */
+background: #AAB3FF;
+border-radius: 30px;
+/* 약 정보 추가하기 */
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 13px;
+line-height: 19px;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+.addMedSearch img{
+    position: absolute;
+    left: 7%;
+    width: 15px;
+}
+.deleteMed{
+    /* Rectangle 76 */
+
+position: absolute;
+width: 150px;
+height: 35px;
+left: 66.5vw;
+margin-top: 29.5vh;
+
+/* N 1 */
+background: #FFB3B3;
+border-radius: 30px;
+/* 약 정보 삭제하기 */
+
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 12px;
+line-height: 19px;
+display: flex;
+align-items: center;
+text-align: center;
+justify-content: center;
+
+color: #FFFFFF;
+
+
+}
+.deleteMed img{
+    position: absolute;
+    left: 7%;
+    width: 15px;
+}

@@ -252,8 +252,8 @@ font-weight: 600;
 
 /* 부작용 */
 .Mypage-se{
-   width: 1040px;
-   min-height: 250px;
+   width: 800px;
+   min-height: 245px;
    border-radius: 16px;
    border: 1px solid #AAB3FF;
    background: #FFF;
@@ -302,8 +302,8 @@ font-weight: 600;
 .Mypage-caution { /*부작용&주의사항*/
    position: relative;
    margin-top: 50px;
-   width: 1040px;
-   min-height: 250px;
+   width: 800px;
+   min-height: 245px;
    border-radius: 16px;
    border: 1px solid #AAB3FF;
    background: #FFF;
@@ -316,6 +316,7 @@ font-weight: 600;
  
  .Mypage-caution-img { /*약 성분 사진*/
    position: absolute;
+   margin-top: -20px;
    margin-left: 42px;
    width: 140px;
    height: 140px;
@@ -336,8 +337,9 @@ font-weight: 600;
    justify-content: center;
    align-items: center;
    position: relative;
+   top: -20px;
    width: 105.882px;
-   height: 35px;
+   height: 30px;
    border-radius: 30px;
    border: 2px solid #AAB3FF;
    background: #FFF;

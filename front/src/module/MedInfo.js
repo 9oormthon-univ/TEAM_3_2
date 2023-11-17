@@ -1,10 +1,20 @@
 import React from "react";
 import Med1 from "../img/Med1.svg";
 import PlusCircle from "../img/plus-circle.svg";
-const MedInfo = ({ value }) => {
+import axios from "axios";
+const MedInfo = ({ username, value }) => {
+  const handleAddMed = async () => {
+    try {
+      const response = await axios.post("http://localhost:8000/addMedication", {
+        닉네임: username,
+        약정보: value,
+      });
+      console.log(response);
+    } catch {}
+  };
   return (
     <div>
-      <div className="AllergicAdd">
+      <div className="AllergicAdd" onClick={handleAddMed}>
         <img className="plus-circle" src={PlusCircle}></img>
         <span>알러지 등록</span>
       </div>
