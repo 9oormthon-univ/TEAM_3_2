@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 import Search from "../module/Search";
 import Logo from "../module/Logo";
 import Nav from "../module/Nav";
@@ -29,11 +30,27 @@ const Main = ({
     const pageNo = 1;
     const userId = idFromQuery;
 
-    // Call the common onSearch callback
-    onSearch(query, userId);
-    onSearchList(query, pageNo);
+    try {
+      // 로컬 스토리지에서 accessToken 가져오기
+      const accessToken = localStorage.getItem("accessToken");
 
-    navigate(`/searchList?id=${userId}&query=${query}`);
+      // 만약 accessToken이 있다면 헤더에 추가
+      if (accessToken) {
+        // axios 설정에서 헤더에 토큰을 추가
+        console.log(accessToken);
+        axios.defaults.headers.common[
+          "Authorization"
+        ] = `Bearer ${accessToken}`;
+      }
+
+      // Call the common onSearch callback
+      onSearch(query, userId);
+      onSearchList(query, pageNo);
+
+      navigate(`/searchList?id=${userId}&query=${query}&token=${accessToken}`);
+    } catch (error) {
+      console.error("검색 중 에러:", error);
+    }
   };
 
   const handleLogout = () => {

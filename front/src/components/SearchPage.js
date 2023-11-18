@@ -23,15 +23,19 @@ const SearchPage = ({
   const [searchQuery, setSearchQuery] = useState(searchQueryFromUrl || "");
 
   const handleSearchCallback = async (query) => {
+    const accessToken = localStorage.getItem("accessToken");
+
     try {
       setSearchQuery(query);
       console.log(`검색어: ${query}`);
       const userId = username || idFromQuery;
       const pageNo = 1;
-      onSearch(query, userId);
-      onSearchList(query, pageNo);
+      if (accessToken) {
+        onSearch(query, userId);
+        onSearchList(query, pageNo);
 
-      navigate(`/searchList?id=${userId}&query=${query}`);
+        navigate(`/searchList?id=${userId}&query=${query}&token${accessToken}`);
+      }
     } catch (error) {
       console.error("검색 중 오류 발생:", error.message);
     }
