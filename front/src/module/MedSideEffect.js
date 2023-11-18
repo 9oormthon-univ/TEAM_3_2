@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Modal from "./ModalIngredient";
 
 const MedSideEffect = ({ medicineName }) => {
   const [mediData, setMediData] = useState({
@@ -36,6 +37,14 @@ const MedSideEffect = ({ medicineName }) => {
    }
  }, [medicineName]);
 
+ const [modalVisible, setModalVisible] = useState(false);
+ const handleImageClick = () => {
+   setModalVisible(!modalVisible);
+ };
+ const closeModal = () => {
+   setModalVisible(false);
+ };
+
 
   return (
     <div className="MyPage-main">
@@ -58,7 +67,7 @@ const MedSideEffect = ({ medicineName }) => {
       <section className="Mypage-caution">
         <div className="Mypage-se-title">약의 부작용 & 주의사항</div>
         <div className="Mypage-caution-container">
-          <div className="Mypage-caution-img">
+          <div className="Mypage-caution-img" onClick={handleImageClick}>
             <img src={mediData.image}  />
           </div>
           <div className="Mypage-caution-content">
@@ -66,6 +75,9 @@ const MedSideEffect = ({ medicineName }) => {
             <div className="Mypage-caution-about">{mediData.caution}</div>
           </div>
         </div>
+        {modalVisible && (
+          <Modal mediName={medicineName} imageUrl={mediData.image} closeModal={closeModal}  />
+        )}
       </section>
     </div>
   );
