@@ -49,20 +49,10 @@ const MedSideEffect = ({ medicineName }) => {
   return (
     <div className="MyPage-main">
       <section className="Mypage-se">
-        <div className="Mypage-se-title">약의 부작용</div>
+        <div className="Mypage-se-title">약의 효능</div>
         <div className="Mypage-se-container">
-         {mediData.sideEffect}
-         {/*
-         {medicine.sideEffect.map((effect, index) => (
-            <div className="Mypage-se-content" key={index}>
-            <img src={effect.imageUrl} />
-            <div className="Mypage-se-content-title">
-               {effect.sideEffectName}
-            </div>
-            </div>
-         ))}
-         */}
-      </div>
+         {mediData.sideEffect}ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+        </div>
       </section>
       <section className="Mypage-caution">
         <div className="Mypage-se-title">약의 부작용 & 주의사항</div>

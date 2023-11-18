@@ -294,7 +294,14 @@ font-weight: 600;
    display: flex;
    justify-content: flex-start;
    padding: 0 58px;
-   width: 804px;
+   max-width: 830px;
+
+   color: #000;
+
+   font-family: 'Pretendard';
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 25px; /* 156.25% */
 }
 .Mypage-se-content {
    width: 62px;

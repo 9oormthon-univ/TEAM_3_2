@@ -8,7 +8,7 @@ const Modal = ({ mediName, imageUrl, closeModal }) => {
           &times;
         </span>
         <div className="Modal-medName">{mediName}</div>
-        <div className="Modal-img" >
+        <div className="Modal-img" > 
          <img src={imageUrl} className="" />
          </div>
         <div className="Modal-pre">성분 표기 서비스가 준비중입니다!</div>
