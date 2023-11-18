@@ -346,8 +346,53 @@ height: 200px;
 left: calc(50% - 680px/2 + 10px);
 margin-top: 12.5vh;
 
-background: #D9D9D9;
+background: url("../img/mainp1.svg");
+background-size: cover;
+background-repeat: no-repeat;
 border-radius: 16px;
+}
+.medGuideBox1 h1{
+    /* 약은 물과 함께, */
+
+position: absolute;
+width: 190px;
+height: 38px;
+left: 425px;
+top: 30px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 38px;
+display: flex;
+align-items: center;
+text-align: right;
+
+color: #FFFFFF;
+
+
+}
+.medGuideBox1 span{
+    /* 약은 물과 함께 복용하는 것이 가장 좋습니다. 물과 함께 마시면 약을 녹여 흡수를 돕고, 식도나 위에 달라붙지 않도록 해요. 또한 위장장애의 위험도 줄일 수 있어요. */
+
+position: absolute;
+width: 440px;
+height: 38px;
+left: 175px;
+top: 125px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 13px;
+line-height: 19px;
+display: flex;
+align-items: center;
+text-align: right;
+
+color: #FFFFFF;
+
 
 }
 .goormGuide{
@@ -369,28 +414,19 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 /* Group 441 */
 
 position: absolute;
-width: 325px;
-height: 150px;
-left: calc(50% - 250px/2 - 200px);
+width: 680px;
+height: 200px;
+left: calc(50% - 250px/2 - 205px);
 margin-top: 42.5vh;
 
-background: #D9D9D9;
+background: url("../img/mainp2.svg");
+background-size: cover;
+background-repeat: no-repeat;
 border-radius: 16px;
 
 
 }
-.medGuideBox3{
-/* Group 440 */
 
-position: absolute;
-width: 325px;
-height: 150px;
-left: calc(50% - 400px/2 + 220px);
-margin-top: 42.5vh;
-
-background: #D9D9D9;
-border-radius: 16px;
-}
 .goormGuideFooter{
     /* 구룸 일러스트_대지 1 5 */
 
@@ -398,7 +434,7 @@ position: absolute;
 width: 132px;
 height: 86px;
 left: calc(50% - (-260px));
-margin-top: 55vh;
+margin-top: 62.5vh;
 
 background: url("../img/goormguidefooter.svg");
 filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
@@ -408,7 +444,7 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 }
 .MedKnowledgeContainer{
     position: absolute;
-    margin-top:40vw;
+    margin-top:42.5vw;
     width:100%;
     height: 100vh*0.5;
 }
@@ -439,11 +475,13 @@ color: #000958;
     /* Group 442 */
 
 position: absolute;
-width: 160px;
+width: 22vw;
 height: 200px;
-left: calc(50% - 194px/2 - 235px);
+left: 28.5vw;
 margin-top: 117.5vh;
-background: #D9D9D9;
+background: url("../img/mainp3.svg");
+background-size: cover;
+background-repeat: no-repeat;
 border-radius: 16px;
 
 }
@@ -451,39 +489,17 @@ border-radius: 16px;
     /* Group 445 */
 
 position: absolute;
-width: 160px;
+width: 22vw;
 height: 200px;
-left: calc(50% - 194.63px/2 - 60px);
+left: 51.5vw;
 margin-top: 117.5vh;
-background: #D9D9D9;
+background: url("../img/mainp4.svg");
+background-size: cover;
+background-repeat: no-repeat;
 border-radius: 16px;
 
 }
-.KnowledgeBox3{
-    /* Group 444 */
 
-position: absolute;
-width: 160px;
-height: 200px;
-left: calc(50% - 194.63px/2 + 115px);
-margin-top: 117.5vh;
-
-background: #D9D9D9;
-border-radius: 16px;
-
-}
-.KnowledgeBox4{
-    /* Group 446 */
-
-position: absolute;
-width: 160px;
-height: 200px;
-left: calc(50% - 194.63px/2 + 290px);
-margin-top: 117.5vh;
-background: #D9D9D9;
-border-radius: 16px;
-
-}
 .KnowledgeGoorm{
     /* 구룸 일러스트_대지 1 6 */
 
@@ -491,7 +507,7 @@ position: absolute;
 width: 165px;
 height: 120px;
 left: calc(50% - 425px); 
-margin-top: 143vh;
+margin-top: 138vh;
 
 background: url("../img/KnowledgeGoorm.svg");
 filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
@@ -724,6 +740,30 @@ color: #FFFFFF;
 
 
 }
+.searchvalue{
+    /* “ 항 ”이 포함된 검색 결과 */
+
+position: absolute;
+width: 384px;
+height: 18px;
+margin-top: 29vh;
+margin-left: 16vw;
+left: calc(50% - 384px/2 - 320px);
+
+font-family: 'Acme';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 30px;
+display: flex;
+align-items: center;
+
+
+/* main color */
+color: #000;
+
+
+}
 .plus-circle{
     /* plus-circle */
 position: absolute;
@@ -749,14 +789,17 @@ border: 1px solid #AAB3FF;
 box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
 border-radius: 16px;
 }
+.highlighted-mark {
+    color: #AAB3FF; /* or any other color you want */
+    background: none;
+  }
 .MedTitleList{
     /* 항히스타민제 */
 
     width: 100px;
     height: 15px;
- margin-left: 2vw;
-    margin-top: 10px;
-
+    margin-top: 2.5vh;
+    margin-left: 2.5vw;
 font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
@@ -766,7 +809,41 @@ display: flex;
 align-items: center;
 
 /* main color */
-color: #AAB3FF;
+color: #000;
+
+
+}
+.PaginationButtons{
+    /* Group 464 */
+
+position: absolute;
+width: 178px;
+height: 19px;
+left: 48vw;
+top: 1225px;
+display: flex;
+gap: 10px;
+
+color: #000000;
+
+}
+.MedIngredientsInfoList{
+    /* 항히스타민 작용 외에 국소마취 ·교감신경차단 ·부교감신경차단 ·진정 ·진토작용이 있다. 주로 알레르기증 ·기관지천식 ·두드러기 ·약물진(藥物疹) ·혈청병 외에, 감기의 초기나 차멀미에 쓰인다. 또 연고제로서 알레르기성 피부병에도 쓰인다. 내복을 할 때는 졸음이 오거나 소화불량 ·흥분 등의 부작용이 있다. */
+position: absolute;
+margin-top: 2.5vh;
+margin-left: 2.5vw;
+
+font-family: 'Acme';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 30px;
+/* or 188% */
+display: flex;
+align-items: center;
+
+/* main color */
+color: #000;
 
 
 }

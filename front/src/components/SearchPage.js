@@ -29,12 +29,12 @@ const SearchPage = ({
       setSearchQuery(query);
       console.log(`검색어: ${query}`);
       const userId = username || idFromQuery;
-      const pageNo = 1;
+      var pageNo = 1;
       if (accessToken) {
         onSearch(query, userId);
         onSearchList(query, pageNo);
 
-        navigate(`/searchList?id=${userId}&query=${query}&token${accessToken}`);
+        navigate(`/searchList?id=${userId}&query=${query}&page=${pageNo}`);
       }
     } catch (error) {
       console.error("검색 중 오류 발생:", error.message);

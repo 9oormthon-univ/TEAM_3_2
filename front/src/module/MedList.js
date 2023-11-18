@@ -3,8 +3,15 @@ import PlusCircle from "../img/plus-circle.svg";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import handleSearch from "../service/SearchService";
+import handleSearchList from "../service/SearchListService";
 
-const MedList = ({ username, value, searchListResults }) => {
+const MedList = ({
+  username,
+  value,
+  searchListResults,
+  onSearchList,
+  onSearch,
+}) => {
   const handleAddMed = async () => {
     try {
       const response = await axios.post("http://localhost:8000/addMedication", {
@@ -33,28 +40,51 @@ const MedList = ({ username, value, searchListResults }) => {
   };
 
   const medicineList = searchListResults && searchListResults.medicineList;
-  const currentPage = searchListResults && searchListResults.currentPage;
   const totalPage = searchListResults && searchListResults.totalPage;
-  const handlePreviousPage = () => {
-    if (currentPage > 1) {
-      // 이전 페이지로 이동하는 로직
-      navigate(
-        `/searchList?id=${username}&query=${value}&page=${currentPage - 1}`
-      );
-    }
-  };
 
   // 다음 페이지로 이동하는 함수
-  const handleNextPage = () => {
-    if (currentPage < totalPage) {
-      navigate(
-        `/searchList?id=${username}&query=${value}&page=${currentPage + 1}`
+  const handlePageChange = (page) => {
+    navigate(`/searchList?id=${username}&query=${value}&page=${page}`);
+    onSearchList(value, page);
+  };
+  const highlightedText = (text, query) => {
+    if (query !== "" && text.includes(query)) {
+      const parts = text.split(new RegExp(`(${query})`, "gi"));
+
+      return (
+        <>
+          {parts.map((part, index) =>
+            part.toLowerCase() === query.toLowerCase() ? (
+              <mark key={index} className="highlighted-mark">
+                {part}
+              </mark>
+            ) : (
+              part
+            )
+          )}
+        </>
       );
     }
+
+    return text;
+  };
+  const renderPaginationButtons = () => {
+    const buttons = [];
+    for (let i = 1; i <= totalPage; i++) {
+      buttons.push(
+        <div key={i} onClick={() => handlePageChange(i)}>
+          {i}
+        </div>
+      );
+    }
+    return buttons;
   };
 
   return (
     <div>
+      <div className="searchvalue">
+        {highlightedText(value, value)} 이 포함된 검색 결과
+      </div>
       <div className="AllergicAdd" onClick={handleAddMed}>
         <img className="plus-circle" src={PlusCircle} alt="알러지 등록"></img>
         <span>알러지 등록</span>
@@ -67,22 +97,16 @@ const MedList = ({ username, value, searchListResults }) => {
               key={index}
               onClick={() => handleClick(med.약이름)}
             >
-              <div className="MedTitleList">{med.약이름}</div>
+              <div className="MedTitleList">
+                {highlightedText(med.약이름, value)}
+              </div>
               <div className="MedIngredientsList">
-                <span>약의 성분</span>
                 <div className="MedIngredientsInfoList">{med.성분내용}</div>
               </div>
             </div>
           ))}
       </div>
-      <div className="PaginationButtons">
-        {currentPage > 1 && (
-          <button onClick={() => handlePreviousPage}>이전</button>
-        )}
-        {currentPage < totalPage && (
-          <button onClick={handleNextPage}>다음</button>
-        )}
-      </div>
+      <div className="PaginationButtons">{renderPaginationButtons()}</div>
     </div>
   );
 };

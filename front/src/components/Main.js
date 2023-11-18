@@ -27,7 +27,7 @@ const Main = ({
     setSearchQuery(query);
     console.log(`검색어: ${query}`);
     const idFromQuery = params.get("id");
-    const pageNo = 1;
+    var pageNo = 1;
     const userId = idFromQuery;
 
     try {
@@ -47,7 +47,7 @@ const Main = ({
       onSearch(query, userId);
       onSearchList(query, pageNo);
 
-      navigate(`/searchList?id=${userId}&query=${query}&token=${accessToken}`);
+      navigate(`/searchList?id=${userId}&query=${query}&page=${pageNo}`);
     } catch (error) {
       console.error("검색 중 에러:", error);
     }
@@ -68,7 +68,7 @@ const Main = ({
       <Background />
       <MedGuideBox />
       <MedKnowledgeBox />
-      <Footer footerTop={"1875px"} />
+      <Footer footerTop={"1900px"} />
     </div>
   );
 };

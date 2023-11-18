@@ -19,17 +19,18 @@ const SearchItemListPage = ({
   const searchQueryFromUrl = new URLSearchParams(location.search).get("query");
   const idFromQuery = new URLSearchParams(location.search).get("id");
   const [searchQuery, setSearchQuery] = useState(searchQueryFromUrl || "");
+  const [pageNo, setPageNo] = useState(1);
 
-  const handleSearchCallback = async (query) => {
+  const handleSearchCallback = async (query, page = 1) => {
     try {
       setSearchQuery(query);
+      setPageNo(page);
       console.log(`검색어: ${query}`);
       const userId = username || idFromQuery;
-      const pageNo = 1;
       //   onSearch(query, userId);
-      onSearchList(query, pageNo);
+      onSearchList(query, page);
       onSearch(query, userId);
-      navigate(`/searchList?id=${userId}&query=${query}`);
+      navigate(`/searchList?id=${userId}&query=${query}&page=${page}`);
     } catch (error) {
       console.error("검색 중 오류 발생:", error.message);
     }
@@ -53,8 +54,9 @@ const SearchItemListPage = ({
         searchResults={searchResults}
         searchListResults={searchListResults}
         onSearch={handleSearchCallback}
+        onSearchList={handleSearchCallback}
       />
-      <Footer footerTop={"1200px"} />
+      <Footer footerTop={"1350px"} />
     </div>
   );
 };

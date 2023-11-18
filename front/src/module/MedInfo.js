@@ -1,11 +1,12 @@
 import React from "react";
 import Med1 from "../img/Med1.svg";
 import PlusCircle from "../img/plus-circle.svg";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 const MedInfo = ({ username, value }) => {
   const location = useLocation();
   const { searchResults } = location.state || {};
+  const navigate = useNavigate();
   const handleAddMed = async () => {
     try {
       const response = await axios.post("http://localhost:8000/addMedication", {
@@ -14,6 +15,7 @@ const MedInfo = ({ username, value }) => {
       });
       console.log(response);
     } catch {}
+    navigate(`/mypage?nickname=${username}`);
   };
   console.log("검색 페이이이이", searchResults);
 

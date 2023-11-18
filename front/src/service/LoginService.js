@@ -25,7 +25,7 @@ const handleLogin = async (email, password, onLogin, navigate) => {
       onLogin(data.닉네임);
 
       // 페이지 이동
-      navigate(`/?id=${data.닉네임}`);
+      navigate(`/?id=${data.닉네임}&token=${data.accessToken}`);
     } else {
       console.error("로그인 실패:", "서버 응답에 필요한 데이터가 부족합니다.");
     }
