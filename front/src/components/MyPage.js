@@ -6,6 +6,7 @@ import MyProfile from "../module/MyProfile";
 import MedShouldNotTake from "../module/MedShouldNotTake";
 import MedSideEffect from "../module/MedSideEffect";
 import { useNavigate } from "react-router-dom";
+import Footer from "../module/Footer";
 
 const MyPage = ({ username, onLogout }) => {
   const [email, setEmail] = useState(null);
@@ -50,7 +51,8 @@ const MyPage = ({ username, onLogout }) => {
       <Nav username={username} onLogout={handleLogout} />
       <MyProfile username={username} email={email} />
       <MedShouldNotTake username={username} medicineName={handleMedicationSelect}/>
-      <MedSideEffect medicineName={selectedMedication} />
+      <MedSideEffect medicineId={selectedMedication} />
+      <Footer footerTop={"1500px"} />
     </div>
   );
 };

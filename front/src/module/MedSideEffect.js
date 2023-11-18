@@ -2,24 +2,23 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Modal from "./ModalIngredient";
 
-const MedSideEffect = ({ medicineName }) => {
+const MedSideEffect = ({ medicineId }) => {
   const [mediData, setMediData] = useState({
     image: "",
     name: "",
     effect: "",
-    sideEffect: "",
     caution: "",
   });
 
   useEffect(() => {
-   if (medicineName) {
-     axios.get(`/api/v1/home/${medicineName}`)
+   if (medicineId) {
+     axios.get(`/api/v1/home/${medicineId}`)
        .then((response) => {
          const data = response.data;
          setMediData({
            image: data.image,
+           name: data.name,
            effect: data.effect,
-           sideEffect: data.sideEffect,
            caution: data.caution,
          });
        })
@@ -30,12 +29,12 @@ const MedSideEffect = ({ medicineName }) => {
      // Handle the case when medicineName is null
      setMediData({
        image: "",
+       name: "",
        effect: "",
-       sideEffect: "",
        caution: "",
      });
    }
- }, [medicineName]);
+ }, [medicineId]);
 
  const [modalVisible, setModalVisible] = useState(false);
  const handleImageClick = () => {
@@ -51,7 +50,7 @@ const MedSideEffect = ({ medicineName }) => {
       <section className="Mypage-se">
         <div className="Mypage-se-title">약의 효능</div>
         <div className="Mypage-se-container">
-         {mediData.sideEffect}ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+         {mediData.sideEffect}
         </div>
       </section>
       <section className="Mypage-caution">
@@ -61,12 +60,12 @@ const MedSideEffect = ({ medicineName }) => {
             <img src={mediData.image}  />
           </div>
           <div className="Mypage-caution-content">
-            <div className="Mypage-caution-name">{medicineName}</div>
+            <div className="Mypage-caution-name">{mediData.name}</div>
             <div className="Mypage-caution-about">{mediData.caution}</div>
           </div>
         </div>
         {modalVisible && (
-          <Modal mediName={medicineName} imageUrl={mediData.image} closeModal={closeModal}  />
+          <Modal mediName={mediData.name} imageUrl={mediData.image} closeModal={closeModal}  />
         )}
       </section>
     </div>

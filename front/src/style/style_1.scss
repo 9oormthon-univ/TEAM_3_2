@@ -263,18 +263,26 @@ font-size: 10px;
 font-weight: 600;
 }
 
-.MyPage-main{
-   position: relative;
-   top: 73vh;
+.Mypage-container{
    display: flex;
    flex-direction: column;
+   align-items: center;
+   justify-items: center;
+}
+
+.MyPage-main{
+   position: absolute;
+   left: calc(50% - 400px);
+   top: calc(42vh + 290px);
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
 }
 
 /* 부작용 */
 .Mypage-se{
+   display: relative;
    width: 800px;
    min-height: 245px;
    border-radius: 16px;
