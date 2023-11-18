@@ -41,7 +41,7 @@ const RegisterPage = ({ onRegister }) => {
 
   const validateEmail = (email) => {
     // 이메일 형식 및 '@' 포함 여부 확인!
-    const emailRegex = /^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]+$/;
+    const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]+$/;
     const isValidEmail = emailRegex.test(email);
     setEmailValid(isValidEmail);
   };

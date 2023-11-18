@@ -11,23 +11,33 @@ import Footer from "../module/Footer";
 const MyPage = ({ username, onLogout }) => {
   const [email, setEmail] = useState(null);
   const [selectedMedication, setSelectedMedication] = useState(null); // 선택된 약 이름
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
+  const nickname = username;
+  const accessToken = localStorage.getItem("accessToken");
   useEffect(() => {
     const fetchEmail = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/user/${username}`
+          `https://port-0-team-3-3szcb0g2blp12i5o9.sel5.cloudtype.app/api/v1/mypage`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+              "Content-Type": "application/json",
+            },
+          }
         );
 
         if (response.status === 200) {
           const userData = response.data;
-          setEmail(userData.이메일);
+          setEmail(userData.email);
         } else {
           console.error("Error during email retrieval:", response.statusText);
         }
       } catch (error) {
         console.error("Error during email retrieval:", error.message);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -41,7 +51,8 @@ const MyPage = ({ username, onLogout }) => {
     navigate("/login");
   };
 
-  const handleMedicationSelect = (medication) => { // 선택된 약 이름 저장
+  const handleMedicationSelect = (medication) => {
+    // 선택된 약 이름 저장
     setSelectedMedication(medication);
   };
 
@@ -50,7 +61,10 @@ const MyPage = ({ username, onLogout }) => {
       <Logo />
       <Nav username={username} onLogout={handleLogout} />
       <MyProfile username={username} email={email} />
-      <MedShouldNotTake username={username} medicineName={handleMedicationSelect}/>
+      <MedShouldNotTake
+        username={username}
+        medicineName={handleMedicationSelect}
+      />
       <MedSideEffect medicineId={selectedMedication} />
       <Footer footerTop={"1500px"} />
     </div>
