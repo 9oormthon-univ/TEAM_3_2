@@ -7,6 +7,8 @@ const AutoComplete = ({ inputValue, onItemSelect }) => {
   const [loading, setLoading] = useState(false);
   const loaderRef = useRef(null);
   const accessToken = localStorage.getItem("accessToken");
+  axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
+  axios.defaults.headers.common["Content-Type"] = "application/json";
 
   useEffect(() => {
     if (inputValue === "") {
@@ -19,11 +21,7 @@ const AutoComplete = ({ inputValue, onItemSelect }) => {
           {
             params: {
               search: inputValue,
-              pageNo: page,
-            },
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-              "Content-Type": "application/json",
+              pageNo: parseInt(page),
             },
           }
         )
@@ -61,11 +59,7 @@ const AutoComplete = ({ inputValue, onItemSelect }) => {
             {
               params: {
                 search: inputValue,
-                pageNo: page,
-              },
-              headers: {
-                Authorization: `Bearer ${accessToken}`,
-                "Content-Type": "application/json",
+                pageNo: parseInt(page),
               },
             }
           )

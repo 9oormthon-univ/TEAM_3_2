@@ -1,6 +1,10 @@
 import axios from "axios";
 
 const handleSearchList = async (query, pageNo) => {
+  const accessToken = localStorage.getItem("accessToken");
+  axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
+  console.log(accessToken);
+  axios.defaults.headers.common["Content-Type"] = "application/json";
   console.log(query, pageNo);
   try {
     const response = await axios.get(
@@ -8,7 +12,7 @@ const handleSearchList = async (query, pageNo) => {
       {
         params: {
           search: query,
-          pageNo: pageNo,
+          pageNo: parseInt(0),
         },
       }
     );

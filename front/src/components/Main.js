@@ -47,7 +47,7 @@ const Main = ({
       onSearch(query, userId);
       onSearchList(query, pageNo);
 
-      navigate(`/searchList?id=${userId}&query=${query}&page=${pageNo}`);
+      navigate(`/searchList?id=${userId}&query=${query}`);
     } catch (error) {
       console.error("검색 중 에러:", error);
     }

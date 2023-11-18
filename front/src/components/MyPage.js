@@ -15,17 +15,14 @@ const MyPage = ({ username, onLogout }) => {
   const navigate = useNavigate();
   const nickname = username;
   const accessToken = localStorage.getItem("accessToken");
+  axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
+  axios.defaults.headers.common["Content-Type"] = "application/json";
+  console.log(accessToken);
   useEffect(() => {
     const fetchEmail = async () => {
       try {
         const response = await axios.get(
-          `https://port-0-team-3-3szcb0g2blp12i5o9.sel5.cloudtype.app/api/v1/mypage`,
-          {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-              "Content-Type": "application/json",
-            },
-          }
+          `https://port-0-team-3-3szcb0g2blp12i5o9.sel5.cloudtype.app/api/v1/mypage`
         );
 
         if (response.status === 200) {
